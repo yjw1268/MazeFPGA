@@ -9,13 +9,15 @@ module easy_maze
 	col_green,
 	cat,
 	seg_led,
-	pause
+	pause,
+	beep
 );
 input clk_in;//时钟输入
 input rst;//复位信号
 input [3:0] key;//方向输入
 input map;//up1,down0,default0
 input pause;
+input beep;
 output [7:0]row,col_red,col_green;//点阵输出
 output [7:0]cat,seg_led;//数码管显示
 
@@ -23,7 +25,7 @@ wire time_judge;//判断时间的 =1超时 =0未超时
 reg win_judge;// =1胜利 =0未胜利
 wire [7:0] movecnt;//计步计数器器
 wire [63:0] pos;//位置信号
-wire map_judge;
+//wire map_judge;
 
 always@(posedge clk_in or posedge rst)
 begin
@@ -43,7 +45,8 @@ time_move_cnt u1
 	.seg_data6(movecnt[3:0]),
 	.seg_led(seg_led),.cat(cat),
 	.win_judge(win_judge),
-	.flag(time_judge)
+	.flag(time_judge),
+	.pause(pause)
 );
 direction_judge u2
 (
@@ -53,7 +56,9 @@ direction_judge u2
 	.win_judge(win_judge),
 	.key(key),.pos(pos),
 	.movecnt(movecnt),
-	.map(map)
+	.map(map),
+	.pause(pause),
+	.beep(beep)
 );
 led88 u3
 (
@@ -64,8 +69,7 @@ led88 u3
 	.col_green(col_green),
 	.time_judge(time_judge),
 	.win_judge(win_judge),
-	.map(map),
-	.pause(pause)
+	.map(map)
 );
 	
 endmodule
@@ -82,14 +86,12 @@ module led88
 	col_green,
 	time_judge,
 	win_judge,
-	map,
-	pause
+	map
 );
 input clk_in,rst;
 input time_judge,win_judge;
 input  [63:0] pos;
 input map;
-input pause;
 output reg [7:0] row,col_red,col_green;
 reg [2:0] cnt;
 wire clk_1k;
@@ -191,10 +193,12 @@ module time_move_cnt(
 	seg_led,
 	cat,
 	win_judge,
-	flag
+	flag,
+	pause
 );
 input clk_in,rst;
 input win_judge;
+input pause;
 input wire [3:0] seg_data7,seg_data6;//计步器数据传递方向控制传入的步数
 output  wire [7:0] seg_led;//数码管显示电路信号
 output  wire [7:0] cat;
@@ -215,25 +219,33 @@ begin
 		flag <= 1'b0;
 	end
 	else if(!win_judge)
-	begin
-		if(flag)
-			begin seg_data1 <= 4'd0;seg_data0 <= 4'd0;end
-		else
-		begin
-			if(seg_data1 == 4'd0 && seg_data0 == 4'd0)
-				flag <= 1'b1;
-			else
+		case(pause)
+		1'b0:
 			begin
-				if(seg_data0 == 4'd0)//个位为0？
-				begin
-					seg_data1 <= seg_data1 - 1'b1;
-					seg_data0 <= 4'd9;
-				end
+				if(flag)
+					begin seg_data1 <= 4'd0;seg_data0 <= 4'd0;end
 				else
-					seg_data0 <= seg_data0 - 1'b1;
+				begin
+					if(seg_data1 == 4'd0 && seg_data0 == 4'd0)
+						flag <= 1'b1;
+					else
+					begin
+						if(seg_data0 == 4'd0)//个位为0？
+						begin
+							seg_data1 <= seg_data1 - 1'b1;
+							seg_data0 <= 4'd9;
+						end
+						else
+							seg_data0 <= seg_data0 - 1'b1;
+					end
+				end	
 			end
-		end	
-	end
+		1'b1:
+			begin
+				seg_data1 <= seg_data1;
+				seg_data0 <= seg_data0;
+			end
+		endcase
 end
 
 segment s1
@@ -245,7 +257,8 @@ segment s1
 	.seg_data1(seg_data1),
 	.seg_data0(seg_data0),
 	.seg_led(seg_led),
-	.cat(cat)
+	.cat(cat),
+	.pause(pause)
 );
 
 endmodule
@@ -260,10 +273,11 @@ module segment
 	seg_data1,
 	seg_data0,
 	seg_led,
-	cat
+	cat,
+	pause
 );
-input clk_in,
-;
+input pause;
+input clk_in,rst;
 input wire [3:0] seg_data7,seg_data6,seg_data1,seg_data0;
 output reg [7:0] cat;//扫描低电平
 output reg [7:0] seg_led;//控制高电平  高位到低位（左到右）分别为pabcdefg
@@ -294,20 +308,60 @@ always@(posedge clk_1k or posedge rst)
 begin
 	if(rst)
 		cnt <= 2'b0;
+//	else if(pause)
+//		cnt <= cnt;
 	else
 		cnt <= cnt + 1'b1;
 end
 
-always@(cnt)
+reg[7:0] segtemp[3:0];
+always@(posedge clk_in)
 begin
-	case(cnt)
-	2'b00:begin cat=8'b01111111;seg_led = seg[seg_data7];end
-	2'b01:begin cat=8'b10111111;seg_led = seg[seg_data6];end
-	2'b10:begin cat=8'b11111101;seg_led = seg[seg_data1];end
-	2'b11:begin cat=8'b11111110;seg_led = seg[seg_data0];end
-	default:;
+	case(pause)
+		1'b0:begin
+		segtemp[3]<=seg[seg_data7];
+		segtemp[2]<=seg[seg_data6];
+		segtemp[1]<=seg[seg_data1];
+		segtemp[0]<=seg[seg_data0];
+		end
+		1'b1:begin
+		segtemp[3]<=segtemp[3];
+		segtemp[2]<=segtemp[2];
+		segtemp[1]<=segtemp[1];
+		segtemp[0]<=segtemp[0];
+		end
 	endcase
 end
+
+
+always@(cnt)
+	begin
+		case(pause)
+			1'b0:begin
+				case(cnt)
+					2'b00:begin cat=8'b01111111;
+						case(rst)
+							1'b1:seg_led = 8'b0;
+							1'b0:seg_led = seg[seg_data7];
+						endcase
+						end
+					2'b01:begin cat=8'b10111111;seg_led = seg[seg_data6];end
+					2'b10:begin cat=8'b11111101;seg_led = seg[seg_data1];end
+					2'b11:begin cat=8'b11111110;seg_led = seg[seg_data0];end
+					default:;
+				endcase
+				end
+			1'b1:
+				begin
+					case(cnt)
+					2'b00:begin cat=8'b01111111;seg_led = segtemp[3];end
+					2'b01:begin cat=8'b10111111;seg_led = segtemp[2];end
+					2'b10:begin cat=8'b11111101;seg_led = segtemp[1];end
+					2'b11:begin cat=8'b11111110;seg_led = segtemp[0];end
+					endcase
+				end
+		endcase
+	end
 endmodule
 
 //方向控制模块
@@ -320,12 +374,16 @@ module direction_judge
 	key,
 	pos,
 	movecnt,//计步计数器与计步器中seg_data连接
-	map
+	map,
+	pause,
+	beep
 );
 input clk_in,rst;
 input flag,win_judge;
 input [3:0] key;//高位到低位分别表示左右上下
 input map;
+input pause;
+input beep;
 output reg [63:0] pos;
 output reg [7:0]movecnt;//[7:4][3:0]个位
 
@@ -391,7 +449,7 @@ begin
 		pos[ 7: 0] <= 8'b00000000;
 	end
 	endcase
-	else if(!flag && !win_judge)//判断游戏是否失败
+	else if(!flag && !win_judge &&!pause)//判断游戏是否失败
 		if(key_pulse)
 		begin
 			case(key_pulse)
@@ -423,6 +481,8 @@ begin
 				else
 					movecnt[3:0] = movecnt[3:0] + 1'b1;
 			end
+			else
+				beep;
 		end
 end
 

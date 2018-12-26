@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at easy_maze.v(364): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at easy_maze.v(423): always construct contains both blocking and non-blocking assignments

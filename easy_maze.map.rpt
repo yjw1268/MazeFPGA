@@ -1,5 +1,5 @@
 Analysis & Synthesis report for easy_maze
-Sat Dec 22 16:50:59 2018
+Tue Dec 25 16:26:35 2018
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -52,13 +52,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Dec 22 16:50:59 2018    ;
+; Analysis & Synthesis Status ; Successful - Tue Dec 25 16:26:35 2018    ;
 ; Quartus II Version          ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; easy_maze                                ;
 ; Top-level Entity Name       ; easy_maze                                ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 708                                      ;
-; Total pins                  ; 48                                       ;
+; Total logic elements        ; 789                                      ;
+; Total pins                  ; 49                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -148,48 +148,48 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                     ;
-+----------------------------------+-----------------+------------------------+------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ;
-+----------------------------------+-----------------+------------------------+------------------------------+
-; easy_maze.v                      ; yes             ; User Verilog HDL File  ; G:/migong/easy_maze.v        ;
-+----------------------------------+-----------------+------------------------+------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                      ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+
+; easy_maze.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/migong/easy_maze.v ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 708   ;
-;     -- Combinational with no register       ; 482   ;
-;     -- Register only                        ; 75    ;
-;     -- Combinational with a register        ; 151   ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 238   ;
-;     -- 3 input functions                    ; 214   ;
-;     -- 2 input functions                    ; 168   ;
-;     -- 1 input functions                    ; 13    ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 589   ;
-;     -- arithmetic mode                      ; 119   ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 99    ;
-;     -- asynchronous clear/load mode         ; 221   ;
-;                                             ;       ;
-; Total registers                             ; 226   ;
-; Total logic cells in carry chains           ; 125   ;
-; I/O pins                                    ; 48    ;
-; Maximum fan-out node                        ; rst   ;
-; Maximum fan-out                             ; 232   ;
-; Total fan-out                               ; 2680  ;
-; Average fan-out                             ; 3.54  ;
-+---------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 789    ;
+;     -- Combinational with no register       ; 535    ;
+;     -- Register only                        ; 84     ;
+;     -- Combinational with a register        ; 170    ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 272    ;
+;     -- 3 input functions                    ; 227    ;
+;     -- 2 input functions                    ; 173    ;
+;     -- 1 input functions                    ; 33     ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 670    ;
+;     -- arithmetic mode                      ; 119    ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 99     ;
+;     -- asynchronous clear/load mode         ; 221    ;
+;                                             ;        ;
+; Total registers                             ; 254    ;
+; Total logic cells in carry chains           ; 125    ;
+; I/O pins                                    ; 49     ;
+; Maximum fan-out node                        ; clk_in ;
+; Maximum fan-out                             ; 240    ;
+; Total fan-out                               ; 2950   ;
+; Average fan-out                             ; 3.52   ;
++---------------------------------------------+--------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,17 +197,17 @@ applicable agreement for further details.
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node        ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                           ; Library Name ;
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
-; |easy_maze                        ; 708 (2)     ; 226          ; 0          ; 48   ; 0            ; 482 (1)      ; 75 (0)            ; 151 (1)          ; 125 (0)         ; 0 (0)      ; |easy_maze                                                    ; work         ;
-;    |direction_judge:u2|           ; 461 (333)   ; 165          ; 0          ; 0    ; 0            ; 296 (264)    ; 50 (38)           ; 115 (31)         ; 80 (0)          ; 0 (0)      ; |easy_maze|direction_judge:u2                                 ; work         ;
+; |easy_maze                        ; 789 (2)     ; 254          ; 0          ; 49   ; 0            ; 535 (1)      ; 84 (0)            ; 170 (1)          ; 125 (0)         ; 0 (0)      ; |easy_maze                                                    ; work         ;
+;    |direction_judge:u2|           ; 465 (337)   ; 165          ; 0          ; 0    ; 0            ; 300 (268)    ; 51 (39)           ; 114 (30)         ; 80 (0)          ; 0 (0)      ; |easy_maze|direction_judge:u2                                 ; work         ;
 ;       |debounce:ud|               ; 32 (32)     ; 24           ; 0          ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|direction_judge:u2|debounce:ud                     ; work         ;
 ;       |debounce:ul|               ; 32 (32)     ; 24           ; 0          ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|direction_judge:u2|debounce:ul                     ; work         ;
 ;       |debounce:ur|               ; 32 (32)     ; 24           ; 0          ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|direction_judge:u2|debounce:ur                     ; work         ;
 ;       |debounce:uu|               ; 32 (32)     ; 24           ; 0          ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|direction_judge:u2|debounce:uu                     ; work         ;
 ;    |led88:u3|                     ; 117 (99)    ; 21           ; 0          ; 0    ; 0            ; 96 (96)      ; 11 (0)            ; 10 (3)           ; 0 (0)           ; 0 (0)      ; |easy_maze|led88:u3                                           ; work         ;
 ;       |divd_frequency:divd_1k|    ; 18 (18)     ; 18           ; 0          ; 0    ; 0            ; 0 (0)        ; 11 (11)           ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |easy_maze|led88:u3|divd_frequency:divd_1k                    ; work         ;
-;    |time_move_cnt:u1|             ; 128 (19)    ; 39           ; 0          ; 0    ; 0            ; 89 (10)      ; 14 (0)            ; 25 (9)           ; 45 (0)          ; 0 (0)      ; |easy_maze|time_move_cnt:u1                                   ; work         ;
+;    |time_move_cnt:u1|             ; 205 (19)    ; 67           ; 0          ; 0    ; 0            ; 138 (10)     ; 22 (0)            ; 45 (9)           ; 45 (0)          ; 0 (0)      ; |easy_maze|time_move_cnt:u1                                   ; work         ;
 ;       |divd_frequency:divd_1|     ; 64 (64)     ; 27           ; 0          ; 0    ; 0            ; 37 (37)      ; 14 (14)           ; 13 (13)          ; 28 (28)         ; 0 (0)      ; |easy_maze|time_move_cnt:u1|divd_frequency:divd_1             ; work         ;
-;       |segment:s1|                ; 45 (21)     ; 3            ; 0          ; 0    ; 0            ; 42 (19)      ; 0 (0)             ; 3 (2)            ; 17 (0)          ; 0 (0)      ; |easy_maze|time_move_cnt:u1|segment:s1                        ; work         ;
+;       |segment:s1|                ; 122 (98)    ; 31           ; 0          ; 0    ; 0            ; 91 (68)      ; 8 (8)             ; 23 (22)          ; 17 (0)          ; 0 (0)      ; |easy_maze|time_move_cnt:u1|segment:s1                        ; work         ;
 ;          |divd_frequency:divd_1k| ; 24 (24)     ; 1            ; 0          ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 1 (1)            ; 17 (17)         ; 0 (0)      ; |easy_maze|time_move_cnt:u1|segment:s1|divd_frequency:divd_1k ; work         ;
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -294,11 +294,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[2]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[2]  ;
 ; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[1]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[1]  ;
 ; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[0]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[0]  ;
+; time_move_cnt:u1|segment:s1|segtemp[0][7]                                                 ; Stuck at GND due to stuck port data_in              ;
+; time_move_cnt:u1|segment:s1|segtemp[1][7]                                                 ; Stuck at GND due to stuck port data_in              ;
+; time_move_cnt:u1|segment:s1|segtemp[2][7]                                                 ; Stuck at GND due to stuck port data_in              ;
+; time_move_cnt:u1|segment:s1|segtemp[3][7]                                                 ; Stuck at GND due to stuck port data_in              ;
 ; direction_judge:u2|pos[0..7]                                                              ; Stuck at GND due to stuck port data_in              ;
 ; time_move_cnt:u1|divd_frequency:divd_1|cnt[0]                                             ; Merged with led88:u3|divd_frequency:divd_1k|cnt[0]  ;
 ; time_move_cnt:u1|divd_frequency:divd_1|cnt[1]                                             ; Merged with led88:u3|divd_frequency:divd_1k|cnt[1]  ;
 ; time_move_cnt:u1|divd_frequency:divd_1|cnt[2]                                             ; Merged with led88:u3|divd_frequency:divd_1k|cnt[2]  ;
-; Total Number of Removed Registers = 95                                                    ;                                                     ;
+; Total Number of Removed Registers = 99                                                    ;                                                     ;
 +-------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 
@@ -307,12 +311,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 226   ;
+; Total registers                              ; 254   ;
 ; Number of registers using Synchronous Clear  ; 80    ;
 ; Number of registers using Synchronous Load   ; 19    ;
 ; Number of registers using Asynchronous Clear ; 219   ;
 ; Number of registers using Asynchronous Load  ; 2     ;
-; Number of registers using Clock Enable       ; 61    ;
+; Number of registers using Clock Enable       ; 89    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -322,27 +326,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; time_move_cnt:u1|seg_data1[0]          ; 5       ;
-; time_move_cnt:u1|seg_data1[1]          ; 4       ;
+; time_move_cnt:u1|seg_data1[0]          ; 11      ;
+; time_move_cnt:u1|seg_data1[1]          ; 10      ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data1[2]    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data0[1]    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data1[0]    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |easy_maze|time_move_cnt:u1|segment:s1|Mux2 ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |easy_maze|direction_judge:u2|ShiftLeft0    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |easy_maze|direction_judge:u2|ShiftRight0   ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |easy_maze|led88:u3|Mux0                    ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 12 LEs               ; 28 LEs                 ; No         ; |easy_maze|direction_judge:u2|Mux3          ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |easy_maze|led88:u3|col_red[5]              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data1[3]          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data0[1]          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data1[1]          ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |easy_maze|direction_judge:u2|ShiftLeft0          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |easy_maze|direction_judge:u2|ShiftRight0         ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |easy_maze|led88:u3|Mux3                          ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 12 LEs               ; 28 LEs                 ; No         ; |easy_maze|direction_judge:u2|Mux1                ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 35 LEs               ; 7 LEs                  ; No         ; |easy_maze|time_move_cnt:u1|segment:s1|seg_led[3] ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |easy_maze|led88:u3|col_red[5]                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------+
@@ -424,7 +428,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sat Dec 22 16:50:55 2018
+    Info: Processing started: Tue Dec 25 16:26:34 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off easy_maze -c easy_maze
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 7 design units, including 7 entities, in source file easy_maze.v
@@ -439,80 +443,78 @@ Info: Elaborating entity "easy_maze" for the top level hierarchy
 Info: Elaborating entity "time_move_cnt" for hierarchy "time_move_cnt:u1"
 Info: Elaborating entity "divd_frequency" for hierarchy "time_move_cnt:u1|divd_frequency:divd_1"
 Info: Elaborating entity "segment" for hierarchy "time_move_cnt:u1|segment:s1"
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(303): variable "seg_data7" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(304): variable "seg_data6" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(305): variable "seg_data1" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(306): variable "seg_data0" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10030): Net "seg.data_a" at easy_maze.v(270) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "seg.waddr_a" at easy_maze.v(270) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "seg.we_a" at easy_maze.v(270) has no driver or initial value, using a default initial value '0'
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(339): variable "pause" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(343): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(345): variable "seg_data7" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(348): variable "seg_data6" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(349): variable "seg_data1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(350): variable "seg_data0" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info: Elaborating entity "divd_frequency" for hierarchy "time_move_cnt:u1|segment:s1|divd_frequency:divd_1k"
 Info: Elaborating entity "direction_judge" for hierarchy "direction_judge:u2"
-Info (10264): Verilog HDL Case Statement information at easy_maze.v(396): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at easy_maze.v(455): all case item expressions in this case statement are onehot
 Info: Elaborating entity "debounce" for hierarchy "direction_judge:u2|debounce:ul"
 Info: Elaborating entity "led88" for hierarchy "led88:u3"
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(114): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(115): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(116): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(117): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(118): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(119): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(120): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(121): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(125): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(125): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(125): variable "map" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(128): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(129): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(122): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(123): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(127): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(127): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(127): variable "map" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(130): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(131): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(132): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(133): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(134): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(135): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(139): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(139): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(139): variable "map" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(142): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(143): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(136): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(137): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(141): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(141): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(141): variable "map" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(144): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(145): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(146): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(147): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(148): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(149): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(153): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(153): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(167): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(167): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(109): inferring latch(es) for variable "row", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(109): inferring latch(es) for variable "col_red", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(109): inferring latch(es) for variable "col_green", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "col_green[0]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[1]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[2]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[3]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[4]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[5]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[6]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[7]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[0]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[1]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[2]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[3]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[4]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[5]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[6]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[7]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[0]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[1]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[2]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[3]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[4]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[5]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[6]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[7]" at easy_maze.v(125)
-Critical Warning: Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "easy_maze.ram0_segment_b1ef0119.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(150): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(151): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(155): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(155): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(169): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(169): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(111): inferring latch(es) for variable "row", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(111): inferring latch(es) for variable "col_red", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(111): inferring latch(es) for variable "col_green", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "col_green[0]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_green[1]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_green[2]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_green[3]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_green[4]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_green[5]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_green[6]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_green[7]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_red[0]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_red[1]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_red[2]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_red[3]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_red[4]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_red[5]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_red[6]" at easy_maze.v(127)
+Info (10041): Inferred latch for "col_red[7]" at easy_maze.v(127)
+Info (10041): Inferred latch for "row[0]" at easy_maze.v(127)
+Info (10041): Inferred latch for "row[1]" at easy_maze.v(127)
+Info (10041): Inferred latch for "row[2]" at easy_maze.v(127)
+Info (10041): Inferred latch for "row[3]" at easy_maze.v(127)
+Info (10041): Inferred latch for "row[4]" at easy_maze.v(127)
+Info (10041): Inferred latch for "row[5]" at easy_maze.v(127)
+Info (10041): Inferred latch for "row[6]" at easy_maze.v(127)
+Info (10041): Inferred latch for "row[7]" at easy_maze.v(127)
 Warning: Latch led88:u3|col_red[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal win_judge
 Warning: Latch led88:u3|col_red[1] has unsafe behavior
@@ -537,22 +539,22 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "seg_led[7]" is stuck at GND
 Info: Registers with preset signals will power-up high
 Warning: Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "pause"
-Info: Implemented 756 device resources after synthesis - the final resource count might be different
-    Info: Implemented 8 input pins
+    Warning (15610): No output dependent on input pin "beep"
+Info: Implemented 838 device resources after synthesis - the final resource count might be different
+    Info: Implemented 9 input pins
     Info: Implemented 40 output pins
-    Info: Implemented 708 logic cells
-Info: Generated suppressed messages file G:/migong/easy_maze.map.smsg
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 69 warnings
+    Info: Implemented 789 logic cells
+Info: Generated suppressed messages file C:/Users/Administrator/Desktop/migong/easy_maze.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 67 warnings
     Info: Peak virtual memory: 191 megabytes
-    Info: Processing ended: Sat Dec 22 16:50:59 2018
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Tue Dec 25 16:26:35 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in G:/migong/easy_maze.map.smsg.
+The suppressed messages can be found in C:/Users/Administrator/Desktop/migong/easy_maze.map.smsg.
 
 
