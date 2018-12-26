@@ -1,5 +1,5 @@
 Analysis & Synthesis report for easy_maze
-Sat Dec 22 16:50:59 2018
+Wed Dec 26 17:58:11 2018
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -19,14 +19,17 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
  11. Inverted Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Parameter Settings for User Entity Instance: time_move_cnt:u1|divd_frequency:divd_1
- 14. Parameter Settings for User Entity Instance: time_move_cnt:u1|segment:s1|divd_frequency:divd_1k
- 15. Parameter Settings for User Entity Instance: direction_judge:u2|debounce:ul
- 16. Parameter Settings for User Entity Instance: direction_judge:u2|debounce:ur
- 17. Parameter Settings for User Entity Instance: direction_judge:u2|debounce:uu
- 18. Parameter Settings for User Entity Instance: direction_judge:u2|debounce:ud
- 19. Parameter Settings for User Entity Instance: led88:u3|divd_frequency:divd_1k
- 20. Analysis & Synthesis Messages
- 21. Analysis & Synthesis Suppressed Messages
+ 14. Parameter Settings for User Entity Instance: time_move_cnt:u1|debounce:us
+ 15. Parameter Settings for User Entity Instance: time_move_cnt:u1|segment:s1|debounce:us
+ 16. Parameter Settings for User Entity Instance: time_move_cnt:u1|segment:s1|divd_frequency:divd_1k
+ 17. Parameter Settings for User Entity Instance: direction_judge:u2|debounce:ul
+ 18. Parameter Settings for User Entity Instance: direction_judge:u2|debounce:ur
+ 19. Parameter Settings for User Entity Instance: direction_judge:u2|debounce:uu
+ 20. Parameter Settings for User Entity Instance: direction_judge:u2|debounce:ud
+ 21. Parameter Settings for User Entity Instance: led:u3|divd_frequency:divd_1k
+ 22. Parameter Settings for User Entity Instance: led:u3|debounce:us
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,13 +55,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Dec 22 16:50:59 2018    ;
+; Analysis & Synthesis Status ; Successful - Wed Dec 26 17:58:11 2018    ;
 ; Quartus II Version          ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; easy_maze                                ;
 ; Top-level Entity Name       ; easy_maze                                ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 708                                      ;
-; Total pins                  ; 48                                       ;
+; Total logic elements        ; 831                                      ;
+; Total pins                  ; 50                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -148,48 +151,48 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                     ;
-+----------------------------------+-----------------+------------------------+------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ;
-+----------------------------------+-----------------+------------------------+------------------------------+
-; easy_maze.v                      ; yes             ; User Verilog HDL File  ; G:/migong/easy_maze.v        ;
-+----------------------------------+-----------------+------------------------+------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                              ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+
+; easy_maze.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Administrator/Desktop/migongbeep/easy_maze.v ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 708   ;
-;     -- Combinational with no register       ; 482   ;
-;     -- Register only                        ; 75    ;
-;     -- Combinational with a register        ; 151   ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 238   ;
-;     -- 3 input functions                    ; 214   ;
-;     -- 2 input functions                    ; 168   ;
-;     -- 1 input functions                    ; 13    ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 589   ;
-;     -- arithmetic mode                      ; 119   ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 99    ;
-;     -- asynchronous clear/load mode         ; 221   ;
-;                                             ;       ;
-; Total registers                             ; 226   ;
-; Total logic cells in carry chains           ; 125   ;
-; I/O pins                                    ; 48    ;
-; Maximum fan-out node                        ; rst   ;
-; Maximum fan-out                             ; 232   ;
-; Total fan-out                               ; 2680  ;
-; Average fan-out                             ; 3.54  ;
-+---------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 831    ;
+;     -- Combinational with no register       ; 552    ;
+;     -- Register only                        ; 84     ;
+;     -- Combinational with a register        ; 195    ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 288    ;
+;     -- 3 input functions                    ; 232    ;
+;     -- 2 input functions                    ; 193    ;
+;     -- 1 input functions                    ; 34     ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 693    ;
+;     -- arithmetic mode                      ; 138    ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 119    ;
+;     -- asynchronous clear/load mode         ; 245    ;
+;                                             ;        ;
+; Total registers                             ; 279    ;
+; Total logic cells in carry chains           ; 145    ;
+; I/O pins                                    ; 50     ;
+; Maximum fan-out node                        ; clk_in ;
+; Maximum fan-out                             ; 265    ;
+; Total fan-out                               ; 3139   ;
+; Average fan-out                             ; 3.56   ;
++---------------------------------------------+--------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,109 +200,127 @@ applicable agreement for further details.
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node        ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                           ; Library Name ;
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
-; |easy_maze                        ; 708 (2)     ; 226          ; 0          ; 48   ; 0            ; 482 (1)      ; 75 (0)            ; 151 (1)          ; 125 (0)         ; 0 (0)      ; |easy_maze                                                    ; work         ;
-;    |direction_judge:u2|           ; 461 (333)   ; 165          ; 0          ; 0    ; 0            ; 296 (264)    ; 50 (38)           ; 115 (31)         ; 80 (0)          ; 0 (0)      ; |easy_maze|direction_judge:u2                                 ; work         ;
+; |easy_maze                        ; 831 (2)     ; 279          ; 0          ; 50   ; 0            ; 552 (1)      ; 84 (0)            ; 195 (1)          ; 145 (0)         ; 0 (0)      ; |easy_maze                                                    ; work         ;
+;    |direction_judge:u2|           ; 460 (332)   ; 165          ; 0          ; 0    ; 0            ; 295 (263)    ; 48 (36)           ; 117 (33)         ; 80 (0)          ; 0 (0)      ; |easy_maze|direction_judge:u2                                 ; work         ;
 ;       |debounce:ud|               ; 32 (32)     ; 24           ; 0          ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|direction_judge:u2|debounce:ud                     ; work         ;
 ;       |debounce:ul|               ; 32 (32)     ; 24           ; 0          ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|direction_judge:u2|debounce:ul                     ; work         ;
 ;       |debounce:ur|               ; 32 (32)     ; 24           ; 0          ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|direction_judge:u2|debounce:ur                     ; work         ;
 ;       |debounce:uu|               ; 32 (32)     ; 24           ; 0          ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|direction_judge:u2|debounce:uu                     ; work         ;
-;    |led88:u3|                     ; 117 (99)    ; 21           ; 0          ; 0    ; 0            ; 96 (96)      ; 11 (0)            ; 10 (3)           ; 0 (0)           ; 0 (0)      ; |easy_maze|led88:u3                                           ; work         ;
-;       |divd_frequency:divd_1k|    ; 18 (18)     ; 18           ; 0          ; 0    ; 0            ; 0 (0)        ; 11 (11)           ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |easy_maze|led88:u3|divd_frequency:divd_1k                    ; work         ;
-;    |time_move_cnt:u1|             ; 128 (19)    ; 39           ; 0          ; 0    ; 0            ; 89 (10)      ; 14 (0)            ; 25 (9)           ; 45 (0)          ; 0 (0)      ; |easy_maze|time_move_cnt:u1                                   ; work         ;
+;    |led:u3|                       ; 134 (114)   ; 24           ; 0          ; 0    ; 0            ; 110 (110)    ; 13 (0)            ; 11 (4)           ; 0 (0)           ; 0 (0)      ; |easy_maze|led:u3                                             ; work         ;
+;       |debounce:us|               ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |easy_maze|led:u3|debounce:us                                 ; work         ;
+;       |divd_frequency:divd_1k|    ; 18 (18)     ; 18           ; 0          ; 0    ; 0            ; 0 (0)        ; 11 (11)           ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |easy_maze|led:u3|divd_frequency:divd_1k                      ; work         ;
+;    |time_move_cnt:u1|             ; 235 (19)    ; 89           ; 0          ; 0    ; 0            ; 146 (10)     ; 23 (0)            ; 66 (9)           ; 65 (0)          ; 0 (0)      ; |easy_maze|time_move_cnt:u1                                   ; work         ;
 ;       |divd_frequency:divd_1|     ; 64 (64)     ; 27           ; 0          ; 0    ; 0            ; 37 (37)      ; 14 (14)           ; 13 (13)          ; 28 (28)         ; 0 (0)      ; |easy_maze|time_move_cnt:u1|divd_frequency:divd_1             ; work         ;
-;       |segment:s1|                ; 45 (21)     ; 3            ; 0          ; 0    ; 0            ; 42 (19)      ; 0 (0)             ; 3 (2)            ; 17 (0)          ; 0 (0)      ; |easy_maze|time_move_cnt:u1|segment:s1                        ; work         ;
+;       |segment:s1|                ; 152 (99)    ; 53           ; 0          ; 0    ; 0            ; 99 (69)      ; 9 (8)             ; 44 (22)          ; 37 (0)          ; 0 (0)      ; |easy_maze|time_move_cnt:u1|segment:s1                        ; work         ;
+;          |debounce:us|            ; 29 (29)     ; 22           ; 0          ; 0    ; 0            ; 7 (7)        ; 1 (1)             ; 21 (21)          ; 20 (20)         ; 0 (0)      ; |easy_maze|time_move_cnt:u1|segment:s1|debounce:us            ; work         ;
 ;          |divd_frequency:divd_1k| ; 24 (24)     ; 1            ; 0          ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 1 (1)            ; 17 (17)         ; 0 (0)      ; |easy_maze|time_move_cnt:u1|segment:s1|divd_frequency:divd_1k ; work         ;
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                  ;
-+-----------------------------------------------------+-----------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal   ; Free of Timing Hazards ;
-+-----------------------------------------------------+-----------------------+------------------------+
-; led88:u3|row[0]                                     ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|row[1]                                     ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|row[2]                                     ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|row[3]                                     ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|row[4]                                     ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|row[5]                                     ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|row[6]                                     ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|row[7]                                     ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_red[0]                                 ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_red[1]                                 ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_red[2]                                 ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_red[3]                                 ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_red[4]                                 ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_red[5]                                 ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_red[6]                                 ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_red[7]                                 ; led88:u3|row[7]       ; yes                    ;
-; led88:u3|col_green[0]                               ; led88:u3|col_green[7] ; yes                    ;
-; led88:u3|col_green[1]                               ; led88:u3|col_green[7] ; yes                    ;
-; led88:u3|col_green[2]                               ; led88:u3|col_green[7] ; yes                    ;
-; led88:u3|col_green[3]                               ; led88:u3|col_green[7] ; yes                    ;
-; led88:u3|col_green[4]                               ; led88:u3|col_green[7] ; yes                    ;
-; led88:u3|col_green[5]                               ; led88:u3|col_green[7] ; yes                    ;
-; led88:u3|col_green[6]                               ; led88:u3|col_green[7] ; yes                    ;
-; led88:u3|col_green[7]                               ; led88:u3|col_green[7] ; yes                    ;
-; Number of user-specified and inferred latches = 24  ;                       ;                        ;
-+-----------------------------------------------------+-----------------------+------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; led:u3|row[0]                                       ; led:u3|row[7]       ; yes                    ;
+; led:u3|row[1]                                       ; led:u3|row[7]       ; yes                    ;
+; led:u3|row[2]                                       ; led:u3|row[7]       ; yes                    ;
+; led:u3|row[3]                                       ; led:u3|row[7]       ; yes                    ;
+; led:u3|row[4]                                       ; led:u3|row[7]       ; yes                    ;
+; led:u3|row[5]                                       ; led:u3|row[7]       ; yes                    ;
+; led:u3|row[6]                                       ; led:u3|row[7]       ; yes                    ;
+; led:u3|row[7]                                       ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_red[0]                                   ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_red[1]                                   ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_red[2]                                   ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_red[3]                                   ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_red[4]                                   ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_red[5]                                   ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_red[6]                                   ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_red[7]                                   ; led:u3|row[7]       ; yes                    ;
+; led:u3|col_green[0]                                 ; led:u3|col_green[7] ; yes                    ;
+; led:u3|col_green[1]                                 ; led:u3|col_green[7] ; yes                    ;
+; led:u3|col_green[2]                                 ; led:u3|col_green[7] ; yes                    ;
+; led:u3|col_green[3]                                 ; led:u3|col_green[7] ; yes                    ;
+; led:u3|col_green[4]                                 ; led:u3|col_green[7] ; yes                    ;
+; led:u3|col_green[5]                                 ; led:u3|col_green[7] ; yes                    ;
+; led:u3|col_green[6]                                 ; led:u3|col_green[7] ; yes                    ;
+; led:u3|col_green[7]                                 ; led:u3|col_green[7] ; yes                    ;
+; Number of user-specified and inferred latches = 24  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                              ;
-+-------------------------------------------------------------------------------------------+-----------------------------------------------------+
-; Register name                                                                             ; Reason for Removal                                  ;
-+-------------------------------------------------------------------------------------------+-----------------------------------------------------+
-; direction_judge:u2|brick[0..7]                                                            ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[9,13..14]                                                        ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[16]                                                              ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[17]                                                              ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[18]                                                              ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[19]                                                              ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[23..24]                                                          ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[25]                                                              ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[26]                                                              ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[27]                                                              ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[28]                                                              ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[29,33]                                                           ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[34,36]                                                           ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[37]                                                              ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[38,40]                                                           ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[45]                                                              ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[46]                                                              ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[47,50]                                                           ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[54]                                                              ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[55]                                                              ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[57,59..60]                                                       ; Stuck at VCC due to stuck port data_in              ;
-; direction_judge:u2|brick[63]                                                              ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|brick[10..12,15,20..22,30..32,35,39,41..44,48..49,51..53,56,58,61..62] ; Merged with direction_judge:u2|brick[8]             ;
-; direction_judge:u2|gold[1..2]                                                             ; Stuck at GND due to stuck port data_in              ;
-; direction_judge:u2|goru[1..2]                                                             ; Stuck at GND due to stuck port data_in              ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[16]                                ; Merged with led88:u3|divd_frequency:divd_1k|cnt[16] ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[15]                                ; Merged with led88:u3|divd_frequency:divd_1k|cnt[15] ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[14]                                ; Merged with led88:u3|divd_frequency:divd_1k|cnt[14] ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[13]                                ; Merged with led88:u3|divd_frequency:divd_1k|cnt[13] ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[12]                                ; Merged with led88:u3|divd_frequency:divd_1k|cnt[12] ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[11]                                ; Merged with led88:u3|divd_frequency:divd_1k|cnt[11] ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[10]                                ; Merged with led88:u3|divd_frequency:divd_1k|cnt[10] ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[9]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[9]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[8]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[8]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[7]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[7]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[6]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[6]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[5]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[5]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[4]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[4]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[3]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[3]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[2]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[2]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[1]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[1]  ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[0]                                 ; Merged with led88:u3|divd_frequency:divd_1k|cnt[0]  ;
-; direction_judge:u2|pos[0..7]                                                              ; Stuck at GND due to stuck port data_in              ;
-; time_move_cnt:u1|divd_frequency:divd_1|cnt[0]                                             ; Merged with led88:u3|divd_frequency:divd_1k|cnt[0]  ;
-; time_move_cnt:u1|divd_frequency:divd_1|cnt[1]                                             ; Merged with led88:u3|divd_frequency:divd_1k|cnt[1]  ;
-; time_move_cnt:u1|divd_frequency:divd_1|cnt[2]                                             ; Merged with led88:u3|divd_frequency:divd_1k|cnt[2]  ;
-; Total Number of Removed Registers = 95                                                    ;                                                     ;
-+-------------------------------------------------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                            ;
++-------------------------------------------------------------------------------------------+---------------------------------------------------+
+; Register name                                                                             ; Reason for Removal                                ;
++-------------------------------------------------------------------------------------------+---------------------------------------------------+
+; direction_judge:u2|brick[0..7]                                                            ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[9,13..14]                                                        ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[16]                                                              ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[17]                                                              ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[18]                                                              ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[19]                                                              ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[23..24]                                                          ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[25]                                                              ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[26]                                                              ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[27]                                                              ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[28]                                                              ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[29,33]                                                           ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[34,36]                                                           ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[37]                                                              ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[38,40]                                                           ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[45]                                                              ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[46]                                                              ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[47,50]                                                           ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[54]                                                              ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[55]                                                              ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|brick[57,59..60]                                                       ; Stuck at VCC due to stuck port data_in            ;
+; direction_judge:u2|brick[63]                                                              ; Stuck at GND due to stuck port data_in            ;
+; time_move_cnt:u1|debounce:us|key_rst[0]                                                   ; Merged with led:u3|debounce:us|key_rst[0]         ;
+; time_move_cnt:u1|segment:s1|debounce:us|key_rst[0]                                        ; Merged with led:u3|debounce:us|key_rst[0]         ;
+; time_move_cnt:u1|debounce:us|key_rst_pre[0]                                               ; Merged with led:u3|debounce:us|key_rst_pre[0]     ;
+; time_move_cnt:u1|segment:s1|debounce:us|key_rst_pre[0]                                    ; Merged with led:u3|debounce:us|key_rst_pre[0]     ;
+; direction_judge:u2|brick[10..12,15,20..22,30..32,35,39,41..44,48..49,51..53,56,58,61..62] ; Merged with direction_judge:u2|brick[8]           ;
+; led:u3|debounce:us|cnt[0..19]                                                             ; Lost fanout                                       ;
+; led:u3|debounce:us|key_sec[0]                                                             ; Lost fanout                                       ;
+; led:u3|debounce:us|key_sec_pre[0]                                                         ; Lost fanout                                       ;
+; time_move_cnt:u1|debounce:us|cnt[0..19]                                                   ; Lost fanout                                       ;
+; time_move_cnt:u1|debounce:us|key_sec[0]                                                   ; Lost fanout                                       ;
+; time_move_cnt:u1|debounce:us|key_sec_pre[0]                                               ; Lost fanout                                       ;
+; direction_judge:u2|gold[1..2]                                                             ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|goru[1..2]                                                             ; Stuck at GND due to stuck port data_in            ;
+; time_move_cnt:u1|segment:s1|st_judge                                                      ; Merged with time_move_cnt:u1|st_judge             ;
+; time_move_cnt:u1|st_judge                                                                 ; Merged with led:u3|st_judge                       ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[16]                                ; Merged with led:u3|divd_frequency:divd_1k|cnt[16] ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[15]                                ; Merged with led:u3|divd_frequency:divd_1k|cnt[15] ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[14]                                ; Merged with led:u3|divd_frequency:divd_1k|cnt[14] ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[13]                                ; Merged with led:u3|divd_frequency:divd_1k|cnt[13] ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[12]                                ; Merged with led:u3|divd_frequency:divd_1k|cnt[12] ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[11]                                ; Merged with led:u3|divd_frequency:divd_1k|cnt[11] ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[10]                                ; Merged with led:u3|divd_frequency:divd_1k|cnt[10] ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[9]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[9]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[8]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[8]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[7]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[7]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[6]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[6]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[5]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[5]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[4]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[4]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[3]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[3]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[2]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[2]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[1]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[1]  ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|cnt[0]                                 ; Merged with led:u3|divd_frequency:divd_1k|cnt[0]  ;
+; time_move_cnt:u1|segment:s1|segtemp[0][7]                                                 ; Stuck at GND due to stuck port data_in            ;
+; time_move_cnt:u1|segment:s1|segtemp[1][7]                                                 ; Stuck at GND due to stuck port data_in            ;
+; time_move_cnt:u1|segment:s1|segtemp[2][7]                                                 ; Stuck at GND due to stuck port data_in            ;
+; time_move_cnt:u1|segment:s1|segtemp[3][7]                                                 ; Stuck at GND due to stuck port data_in            ;
+; direction_judge:u2|pos[0..7]                                                              ; Stuck at GND due to stuck port data_in            ;
+; time_move_cnt:u1|divd_frequency:divd_1|cnt[0]                                             ; Merged with led:u3|divd_frequency:divd_1k|cnt[0]  ;
+; time_move_cnt:u1|divd_frequency:divd_1|cnt[1]                                             ; Merged with led:u3|divd_frequency:divd_1k|cnt[1]  ;
+; time_move_cnt:u1|divd_frequency:divd_1|cnt[2]                                             ; Merged with led:u3|divd_frequency:divd_1k|cnt[2]  ;
+; Total Number of Removed Registers = 149                                                   ;                                                   ;
++-------------------------------------------------------------------------------------------+---------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -307,12 +328,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 226   ;
-; Number of registers using Synchronous Clear  ; 80    ;
+; Total registers                              ; 279   ;
+; Number of registers using Synchronous Clear  ; 100   ;
 ; Number of registers using Synchronous Load   ; 19    ;
-; Number of registers using Asynchronous Clear ; 219   ;
+; Number of registers using Asynchronous Clear ; 243   ;
 ; Number of registers using Asynchronous Load  ; 2     ;
-; Number of registers using Clock Enable       ; 61    ;
+; Number of registers using Clock Enable       ; 89    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -322,27 +343,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; time_move_cnt:u1|seg_data1[0]          ; 5       ;
-; time_move_cnt:u1|seg_data1[1]          ; 4       ;
+; time_move_cnt:u1|seg_data1[0]          ; 11      ;
+; time_move_cnt:u1|seg_data1[1]          ; 10      ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data1[2]    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data0[1]    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data1[0]    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |easy_maze|time_move_cnt:u1|segment:s1|Mux2 ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |easy_maze|direction_judge:u2|ShiftLeft0    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |easy_maze|direction_judge:u2|ShiftRight0   ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |easy_maze|led88:u3|Mux0                    ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 12 LEs               ; 28 LEs                 ; No         ; |easy_maze|direction_judge:u2|Mux3          ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |easy_maze|led88:u3|col_red[5]              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data1[2]          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data0[1]          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |easy_maze|time_move_cnt:u1|seg_data1[0]          ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |easy_maze|direction_judge:u2|ShiftLeft0          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |easy_maze|direction_judge:u2|ShiftRight0         ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 12 LEs               ; 28 LEs                 ; No         ; |easy_maze|direction_judge:u2|Mux1                ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |easy_maze|led:u3|col_green[6]                    ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 35 LEs               ; 7 LEs                  ; No         ; |easy_maze|time_move_cnt:u1|segment:s1|seg_led[2] ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |easy_maze|led:u3|col_red[0]                      ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |easy_maze|led:u3|col_red[2]                      ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 20 LEs               ; 6 LEs                  ; No         ; |easy_maze|led:u3|col_red[5]                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------+
@@ -353,6 +376,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; divdWIDTH      ; 28       ; Signed Integer                                          ;
 ; divdN          ; 50000000 ; Signed Integer                                          ;
 +----------------+----------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: time_move_cnt:u1|debounce:us ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 1     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: time_move_cnt:u1|segment:s1|debounce:us ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -407,14 +450,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: led88:u3|divd_frequency:divd_1k ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; divdWIDTH      ; 16    ; Signed Integer                                      ;
-; divdN          ; 50000 ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: led:u3|divd_frequency:divd_1k ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; divdWIDTH      ; 16    ; Signed Integer                                    ;
+; divdN          ; 50000 ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: led:u3|debounce:us ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; N              ; 1     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -424,12 +477,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sat Dec 22 16:50:55 2018
+    Info: Processing started: Wed Dec 26 17:58:09 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off easy_maze -c easy_maze
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 7 design units, including 7 entities, in source file easy_maze.v
     Info: Found entity 1: easy_maze
-    Info: Found entity 2: led88
+    Info: Found entity 2: led
     Info: Found entity 3: time_move_cnt
     Info: Found entity 4: segment
     Info: Found entity 5: direction_judge
@@ -438,97 +491,121 @@ Info: Found 7 design units, including 7 entities, in source file easy_maze.v
 Info: Elaborating entity "easy_maze" for the top level hierarchy
 Info: Elaborating entity "time_move_cnt" for hierarchy "time_move_cnt:u1"
 Info: Elaborating entity "divd_frequency" for hierarchy "time_move_cnt:u1|divd_frequency:divd_1"
+Info: Elaborating entity "debounce" for hierarchy "time_move_cnt:u1|debounce:us"
 Info: Elaborating entity "segment" for hierarchy "time_move_cnt:u1|segment:s1"
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(303): variable "seg_data7" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(304): variable "seg_data6" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(305): variable "seg_data1" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(306): variable "seg_data0" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10030): Net "seg.data_a" at easy_maze.v(270) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "seg.waddr_a" at easy_maze.v(270) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "seg.we_a" at easy_maze.v(270) has no driver or initial value, using a default initial value '0'
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(492): variable "st_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(504): variable "pause" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(509): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(511): variable "seg_data7" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(514): variable "seg_data6" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(515): variable "seg_data1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(516): variable "seg_data0" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info: Elaborating entity "divd_frequency" for hierarchy "time_move_cnt:u1|segment:s1|divd_frequency:divd_1k"
 Info: Elaborating entity "direction_judge" for hierarchy "direction_judge:u2"
-Info (10264): Verilog HDL Case Statement information at easy_maze.v(396): all case item expressions in this case statement are onehot
-Info: Elaborating entity "debounce" for hierarchy "direction_judge:u2|debounce:ul"
-Info: Elaborating entity "led88" for hierarchy "led88:u3"
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(114): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(115): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(116): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(117): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(118): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(119): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(120): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(121): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(125): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(125): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(125): variable "map" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(128): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(129): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(130): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(131): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(132): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(133): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(134): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(135): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(139): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(139): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(139): variable "map" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(142): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(143): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(144): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10264): Verilog HDL Case Statement information at easy_maze.v(636): all case item expressions in this case statement are onehot
+Info: Elaborating entity "led" for hierarchy "led:u3"
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(139): variable "st_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(145): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(146): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(147): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(148): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(149): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(153): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(153): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(167): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(167): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(109): inferring latch(es) for variable "row", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(109): inferring latch(es) for variable "col_red", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(109): inferring latch(es) for variable "col_green", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "col_green[0]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[1]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[2]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[3]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[4]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[5]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[6]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_green[7]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[0]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[1]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[2]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[3]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[4]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[5]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[6]" at easy_maze.v(125)
-Info (10041): Inferred latch for "col_red[7]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[0]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[1]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[2]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[3]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[4]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[5]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[6]" at easy_maze.v(125)
-Info (10041): Inferred latch for "row[7]" at easy_maze.v(125)
-Critical Warning: Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "easy_maze.ram0_segment_b1ef0119.hdl.mif" -- setting initial value for remaining addresses to 0
-Warning: Latch led88:u3|col_red[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal win_judge
-Warning: Latch led88:u3|col_red[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal win_judge
-Warning: Latch led88:u3|col_red[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal win_judge
-Warning: Latch led88:u3|col_red[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal win_judge
-Warning: Latch led88:u3|col_red[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal win_judge
-Warning: Latch led88:u3|col_red[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal win_judge
-Warning: Latch led88:u3|col_red[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal win_judge
-Warning: Latch led88:u3|col_red[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal win_judge
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(150): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(151): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(152): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(174): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(175): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(176): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(177): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(178): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(179): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(180): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(181): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(185): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(185): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(185): variable "map" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(188): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(189): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(190): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(191): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(192): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(193): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(194): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(195): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(199): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(199): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(199): variable "map" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(202): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(203): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(204): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(205): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(206): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(207): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(208): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(209): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(213): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(213): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(227): variable "time_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at easy_maze.v(227): variable "win_judge" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(137): inferring latch(es) for variable "row", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(137): inferring latch(es) for variable "col_red", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at easy_maze.v(137): inferring latch(es) for variable "col_green", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "col_green[0]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_green[1]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_green[2]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_green[3]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_green[4]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_green[5]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_green[6]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_green[7]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_red[0]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_red[1]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_red[2]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_red[3]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_red[4]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_red[5]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_red[6]" at easy_maze.v(137)
+Info (10041): Inferred latch for "col_red[7]" at easy_maze.v(137)
+Info (10041): Inferred latch for "row[0]" at easy_maze.v(137)
+Info (10041): Inferred latch for "row[1]" at easy_maze.v(137)
+Info (10041): Inferred latch for "row[2]" at easy_maze.v(137)
+Info (10041): Inferred latch for "row[3]" at easy_maze.v(137)
+Info (10041): Inferred latch for "row[4]" at easy_maze.v(137)
+Info (10041): Inferred latch for "row[5]" at easy_maze.v(137)
+Info (10041): Inferred latch for "row[6]" at easy_maze.v(137)
+Info (10041): Inferred latch for "row[7]" at easy_maze.v(137)
+Warning: Latch led:u3|col_red[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_red[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_red[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_red[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_red[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_red[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_red[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_red[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_green[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_green[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_green[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_green[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_green[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_green[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_green[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
+Warning: Latch led:u3|col_green[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal rst
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "cat[2]" is stuck at VCC
     Warning (13410): Pin "cat[3]" is stuck at VCC
@@ -536,23 +613,68 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "cat[5]" is stuck at VCC
     Warning (13410): Pin "seg_led[7]" is stuck at GND
 Info: Registers with preset signals will power-up high
+Info: 44 registers lost all their fanouts during netlist optimizations. The first 44 are displayed below.
+    Info: Register "led:u3|debounce:us|cnt[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|cnt[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|key_sec[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "led:u3|debounce:us|key_sec_pre[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|cnt[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|key_sec[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "time_move_cnt:u1|debounce:us|key_sec_pre[0]" lost all its fanouts during netlist optimizations.
 Warning: Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "pause"
-Info: Implemented 756 device resources after synthesis - the final resource count might be different
-    Info: Implemented 8 input pins
+    Warning (15610): No output dependent on input pin "beep"
+Info: Implemented 881 device resources after synthesis - the final resource count might be different
+    Info: Implemented 10 input pins
     Info: Implemented 40 output pins
-    Info: Implemented 708 logic cells
-Info: Generated suppressed messages file G:/migong/easy_maze.map.smsg
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 69 warnings
-    Info: Peak virtual memory: 191 megabytes
-    Info: Processing ended: Sat Dec 22 16:50:59 2018
-    Info: Elapsed time: 00:00:04
+    Info: Implemented 831 logic cells
+Info: Generated suppressed messages file C:/Users/Administrator/Desktop/migongbeep/easy_maze.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 93 warnings
+    Info: Peak virtual memory: 192 megabytes
+    Info: Processing ended: Wed Dec 26 17:58:11 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in G:/migong/easy_maze.map.smsg.
+The suppressed messages can be found in C:/Users/Administrator/Desktop/migongbeep/easy_maze.map.smsg.
 
 

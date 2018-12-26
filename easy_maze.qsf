@@ -36,8 +36,8 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "MAX 10"
-set_global_assignment -name DEVICE 10M08DAF484C8G
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM1270T144C5
 set_global_assignment -name TOP_LEVEL_ENTITY easy_maze
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:58:18  DECEMBER 22, 2018"
@@ -95,7 +95,10 @@ set_location_assignment PIN_91 -to key[3]
 set_location_assignment PIN_89 -to key[2]
 set_location_assignment PIN_20 -to key[1]
 set_location_assignment PIN_61 -to key[0]
-set_location_assignment PIN_124 -to rst
+set_location_assignment PIN_123 -to rst
 set_global_assignment -name MISC_FILE "C:/Users/Administrator/Desktop/migong/easy_maze.dpf"
 set_location_assignment PIN_125 -to map
 set_location_assignment PIN_127 -to pause
+set_location_assignment PIN_60 -to beep
+set_global_assignment -name MISC_FILE "C:/Users/Administrator/Desktop/migongbeep/easy_maze.dpf"
+set_location_assignment PIN_124 -to key_s

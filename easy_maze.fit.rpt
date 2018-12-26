@@ -1,5 +1,5 @@
 Fitter report for easy_maze
-Sat Dec 22 16:41:38 2018
+Wed Dec 26 17:58:13 2018
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -57,15 +57,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------+
 ; Fitter Summary                                                   ;
 +-----------------------+------------------------------------------+
-; Fitter Status         ; Successful - Sat Dec 22 16:41:38 2018    ;
+; Fitter Status         ; Successful - Wed Dec 26 17:58:13 2018    ;
 ; Quartus II Version    ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name         ; easy_maze                                ;
 ; Top-level Entity Name ; easy_maze                                ;
 ; Family                ; MAX II                                   ;
 ; Device                ; EPM1270T144C5                            ;
 ; Timing Models         ; Final                                    ;
-; Total logic elements  ; 648 / 1,270 ( 51 % )                     ;
-; Total pins            ; 48 / 116 ( 41 % )                        ;
+; Total logic elements  ; 766 / 1,270 ( 60 % )                     ;
+; Total pins            ; 50 / 116 ( 43 % )                        ;
 ; Total virtual pins    ; 0                                        ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                            ;
 +-----------------------+------------------------------------------+
@@ -143,7 +143,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/Administrator/Desktop/migong/easy_maze.pin.
+The pin-out file can be found in C:/Users/Administrator/Desktop/migongbeep/easy_maze.pin.
 
 
 +--------------------------------------------------------------------+
@@ -151,45 +151,45 @@ The pin-out file can be found in C:/Users/Administrator/Desktop/migong/easy_maze
 +---------------------------------------------+----------------------+
 ; Resource                                    ; Usage                ;
 +---------------------------------------------+----------------------+
-; Total logic elements                        ; 648 / 1,270 ( 51 % ) ;
-;     -- Combinational with no register       ; 422                  ;
-;     -- Register only                        ; 17                   ;
-;     -- Combinational with a register        ; 209                  ;
+; Total logic elements                        ; 766 / 1,270 ( 60 % ) ;
+;     -- Combinational with no register       ; 487                  ;
+;     -- Register only                        ; 19                   ;
+;     -- Combinational with a register        ; 260                  ;
 ;                                             ;                      ;
 ; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 230                  ;
-;     -- 3 input functions                    ; 220                  ;
-;     -- 2 input functions                    ; 168                  ;
-;     -- 1 input functions                    ; 13                   ;
+;     -- 4 input functions                    ; 288                  ;
+;     -- 3 input functions                    ; 232                  ;
+;     -- 2 input functions                    ; 193                  ;
+;     -- 1 input functions                    ; 34                   ;
 ;     -- 0 input functions                    ; 0                    ;
 ;                                             ;                      ;
 ; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 529                  ;
-;     -- arithmetic mode                      ; 119                  ;
-;     -- qfbk mode                            ; 56                   ;
+;     -- normal mode                          ; 628                  ;
+;     -- arithmetic mode                      ; 138                  ;
+;     -- qfbk mode                            ; 61                   ;
 ;     -- register cascade mode                ; 0                    ;
-;     -- synchronous clear/load mode          ; 157                  ;
-;     -- asynchronous clear/load mode         ; 221                  ;
+;     -- synchronous clear/load mode          ; 185                  ;
+;     -- asynchronous clear/load mode         ; 245                  ;
 ;                                             ;                      ;
-; Total registers                             ; 226 / 1,270 ( 18 % ) ;
-; Total LABs                                  ; 80 / 127 ( 63 % )    ;
-; Logic elements in carry chains              ; 125                  ;
+; Total registers                             ; 279 / 1,270 ( 22 % ) ;
+; Total LABs                                  ; 93 / 127 ( 73 % )    ;
+; Logic elements in carry chains              ; 145                  ;
 ; User inserted logic elements                ; 0                    ;
 ; Virtual pins                                ; 0                    ;
-; I/O pins                                    ; 48 / 116 ( 41 % )    ;
+; I/O pins                                    ; 50 / 116 ( 43 % )    ;
 ;     -- Clock pins                           ; 4 / 4 ( 100 % )      ;
 ; Global signals                              ; 4                    ;
 ; UFM blocks                                  ; 0 / 1 ( 0 % )        ;
 ; Global clocks                               ; 4 / 4 ( 100 % )      ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )        ;
-; Average interconnect usage (total/H/V)      ; 29% / 29% / 29%      ;
-; Peak interconnect usage (total/H/V)         ; 41% / 43% / 38%      ;
-; Maximum fan-out node                        ; rst                  ;
-; Maximum fan-out                             ; 222                  ;
+; Average interconnect usage (total/H/V)      ; 33% / 36% / 29%      ;
+; Peak interconnect usage (total/H/V)         ; 39% / 45% / 33%      ;
+; Maximum fan-out node                        ; clk_in               ;
+; Maximum fan-out                             ; 265                  ;
 ; Highest non-global fan-out signal           ; rst                  ;
-; Highest non-global fan-out                  ; 222                  ;
-; Total fan-out                               ; 2675                 ;
-; Average fan-out                             ; 3.84                 ;
+; Highest non-global fan-out                  ; 258                  ;
+; Total fan-out                               ; 3152                 ;
+; Average fan-out                             ; 3.86                 ;
 +---------------------------------------------+----------------------+
 
 
@@ -198,14 +198,16 @@ The pin-out file can be found in C:/Users/Administrator/Desktop/migong/easy_maze
 +--------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 ; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
 +--------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; clk_in ; 18    ; 1        ; 0            ; 7            ; 5           ; 212                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; beep   ; 60    ; 4        ; 9            ; 3            ; 0           ; 0                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; clk_in ; 18    ; 1        ; 0            ; 7            ; 5           ; 265                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; key[0] ; 61    ; 4        ; 10           ; 3            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; key[1] ; 20    ; 1        ; 0            ; 7            ; 6           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; key[2] ; 89    ; 3        ; 17           ; 5            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; key[3] ; 91    ; 3        ; 17           ; 5            ; 0           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-; map    ; 125   ; 2        ; 9            ; 11           ; 2           ; 9                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-; pause  ; 127   ; 2        ; 9            ; 11           ; 3           ; 0                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-; rst    ; 124   ; 2        ; 9            ; 11           ; 1           ; 222                   ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; key_s  ; 124   ; 2        ; 9            ; 11           ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; map    ; 125   ; 2        ; 9            ; 11           ; 2           ; 10                    ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; pause  ; 127   ; 2        ; 9            ; 11           ; 3           ; 11                    ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; rst    ; 123   ; 2        ; 9            ; 11           ; 0           ; 258                   ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 +--------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
 
@@ -224,35 +226,35 @@ The pin-out file can be found in C:/Users/Administrator/Desktop/migong/easy_maze
 ; cat[7]       ; 31    ; 1        ; 0            ; 4            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_green[0] ; 45    ; 4        ; 6            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_green[1] ; 44    ; 4        ; 5            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; col_green[2] ; 43    ; 4        ; 5            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; col_green[2] ; 43    ; 4        ; 5            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_green[3] ; 42    ; 4        ; 4            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_green[4] ; 41    ; 4        ; 3            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_green[5] ; 40    ; 4        ; 3            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; col_green[6] ; 39    ; 4        ; 2            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; col_green[6] ; 39    ; 4        ; 2            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_green[7] ; 38    ; 4        ; 2            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_red[0]   ; 22    ; 1        ; 0            ; 6            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_red[1]   ; 21    ; 1        ; 0            ; 6            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; col_red[2]   ; 16    ; 1        ; 0            ; 7            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; col_red[3]   ; 15    ; 1        ; 0            ; 7            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
-; col_red[4]   ; 14    ; 1        ; 0            ; 7            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
-; col_red[5]   ; 13    ; 1        ; 0            ; 7            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; col_red[2]   ; 16    ; 1        ; 0            ; 7            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
+; col_red[3]   ; 15    ; 1        ; 0            ; 7            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; col_red[4]   ; 14    ; 1        ; 0            ; 7            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; col_red[5]   ; 13    ; 1        ; 0            ; 7            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_red[6]   ; 12    ; 1        ; 0            ; 7            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; col_red[7]   ; 11    ; 1        ; 0            ; 8            ; 6           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; row[0]       ; 8     ; 1        ; 0            ; 8            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; row[1]       ; 7     ; 1        ; 0            ; 8            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; row[2]       ; 6     ; 1        ; 0            ; 9            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; row[2]       ; 6     ; 1        ; 0            ; 9            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; row[3]       ; 5     ; 1        ; 0            ; 9            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; row[4]       ; 4     ; 1        ; 0            ; 9            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; row[5]       ; 3     ; 1        ; 0            ; 10           ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
-; row[6]       ; 2     ; 1        ; 0            ; 10           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
+; row[4]       ; 4     ; 1        ; 0            ; 9            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
+; row[5]       ; 3     ; 1        ; 0            ; 10           ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; row[6]       ; 2     ; 1        ; 0            ; 10           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; row[7]       ; 1     ; 1        ; 0            ; 10           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; seg_led[0]   ; 52    ; 4        ; 8            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; seg_led[1]   ; 53    ; 4        ; 8            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; seg_led[2]   ; 55    ; 4        ; 8            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; seg_led[3]   ; 57    ; 4        ; 8            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; seg_led[2]   ; 55    ; 4        ; 8            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
+; seg_led[3]   ; 57    ; 4        ; 8            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; seg_led[4]   ; 58    ; 4        ; 9            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; seg_led[5]   ; 59    ; 4        ; 9            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; seg_led[6]   ; 62    ; 4        ; 10           ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; seg_led[6]   ; 62    ; 4        ; 10           ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; seg_led[7]   ; 51    ; 4        ; 7            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 +--------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 
@@ -263,9 +265,9 @@ The pin-out file can be found in C:/Users/Administrator/Desktop/migong/easy_maze
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
 ; 1        ; 20 / 26 ( 77 % ) ; 3.3V          ; --           ;
-; 2        ; 3 / 30 ( 10 % )  ; 3.3V          ; --           ;
+; 2        ; 4 / 30 ( 13 % )  ; 3.3V          ; --           ;
 ; 3        ; 2 / 30 ( 7 % )   ; 3.3V          ; --           ;
-; 4        ; 23 / 30 ( 77 % ) ; 3.3V          ; --           ;
+; 4        ; 24 / 30 ( 80 % ) ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -333,7 +335,7 @@ The pin-out file can be found in C:/Users/Administrator/Desktop/migong/easy_maze
 ; 57       ; 82         ; 4        ; seg_led[3]     ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 58       ; 83         ; 4        ; seg_led[4]     ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 59       ; 84         ; 4        ; seg_led[5]     ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
-; 60       ; 85         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 60       ; 85         ; 4        ; beep           ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 61       ; 86         ; 4        ; key[0]         ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 62       ; 87         ; 4        ; seg_led[6]     ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 63       ; 88         ; 4        ; cat[0]         ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
@@ -396,8 +398,8 @@ The pin-out file can be found in C:/Users/Administrator/Desktop/migong/easy_maze
 ; 120      ; 183        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 121      ; 184        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 122      ; 185        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 123      ; 186        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 124      ; 187        ; 2        ; rst            ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 123      ; 186        ; 2        ; rst            ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 124      ; 187        ; 2        ; key_s          ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 125      ; 188        ; 2        ; map            ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 126      ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
 ; 127      ; 189        ; 2        ; pause          ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
@@ -444,17 +446,19 @@ Note: User assignments will override these defaults. The user specified values a
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node        ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                           ; Library Name ;
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
-; |easy_maze                        ; 648 (2)     ; 226          ; 0          ; 48   ; 0            ; 422 (1)      ; 17 (0)            ; 209 (1)          ; 125 (0)         ; 53 (0)     ; |easy_maze                                                    ; work         ;
-;    |direction_judge:u2|           ; 416 (296)   ; 165          ; 0          ; 0    ; 0            ; 251 (227)    ; 5 (1)             ; 160 (68)         ; 80 (0)          ; 40 (32)    ; |easy_maze|direction_judge:u2                                 ; work         ;
+; |easy_maze                        ; 766 (2)     ; 279          ; 0          ; 50   ; 0            ; 487 (1)      ; 19 (0)            ; 260 (1)          ; 145 (0)         ; 58 (0)     ; |easy_maze                                                    ; work         ;
+;    |direction_judge:u2|           ; 417 (297)   ; 165          ; 0          ; 0    ; 0            ; 252 (228)    ; 5 (1)             ; 160 (68)         ; 80 (0)          ; 40 (32)    ; |easy_maze|direction_judge:u2                                 ; work         ;
 ;       |debounce:ud|               ; 30 (30)     ; 24           ; 0          ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 23 (23)          ; 20 (20)         ; 2 (2)      ; |easy_maze|direction_judge:u2|debounce:ud                     ; work         ;
 ;       |debounce:ul|               ; 30 (30)     ; 24           ; 0          ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 23 (23)          ; 20 (20)         ; 2 (2)      ; |easy_maze|direction_judge:u2|debounce:ul                     ; work         ;
 ;       |debounce:ur|               ; 30 (30)     ; 24           ; 0          ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 23 (23)          ; 20 (20)         ; 2 (2)      ; |easy_maze|direction_judge:u2|debounce:ur                     ; work         ;
 ;       |debounce:uu|               ; 30 (30)     ; 24           ; 0          ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 23 (23)          ; 20 (20)         ; 2 (2)      ; |easy_maze|direction_judge:u2|debounce:uu                     ; work         ;
-;    |led88:u3|                     ; 115 (97)    ; 21           ; 0          ; 0    ; 0            ; 94 (94)      ; 6 (0)             ; 15 (3)           ; 0 (0)           ; 0 (0)      ; |easy_maze|led88:u3                                           ; work         ;
-;       |divd_frequency:divd_1k|    ; 18 (18)     ; 18           ; 0          ; 0    ; 0            ; 0 (0)        ; 6 (6)             ; 12 (12)          ; 0 (0)           ; 0 (0)      ; |easy_maze|led88:u3|divd_frequency:divd_1k                    ; work         ;
-;    |time_move_cnt:u1|             ; 115 (19)    ; 39           ; 0          ; 0    ; 0            ; 76 (10)      ; 6 (0)             ; 33 (9)           ; 45 (0)          ; 13 (0)     ; |easy_maze|time_move_cnt:u1                                   ; work         ;
+;    |led:u3|                       ; 134 (114)   ; 24           ; 0          ; 0    ; 0            ; 110 (110)    ; 7 (0)             ; 17 (4)           ; 0 (0)           ; 0 (0)      ; |easy_maze|led:u3                                             ; work         ;
+;       |debounce:us|               ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |easy_maze|led:u3|debounce:us                                 ; work         ;
+;       |divd_frequency:divd_1k|    ; 18 (18)     ; 18           ; 0          ; 0    ; 0            ; 0 (0)        ; 6 (6)             ; 12 (12)          ; 0 (0)           ; 0 (0)      ; |easy_maze|led:u3|divd_frequency:divd_1k                      ; work         ;
+;    |time_move_cnt:u1|             ; 213 (19)    ; 89           ; 0          ; 0    ; 0            ; 124 (10)     ; 7 (0)             ; 82 (9)           ; 65 (0)          ; 18 (0)     ; |easy_maze|time_move_cnt:u1                                   ; work         ;
 ;       |divd_frequency:divd_1|     ; 56 (56)     ; 27           ; 0          ; 0    ; 0            ; 29 (29)      ; 6 (6)             ; 21 (21)          ; 28 (28)         ; 8 (8)      ; |easy_maze|time_move_cnt:u1|divd_frequency:divd_1             ; work         ;
-;       |segment:s1|                ; 40 (21)     ; 3            ; 0          ; 0    ; 0            ; 37 (19)      ; 0 (0)             ; 3 (2)            ; 17 (0)          ; 5 (0)      ; |easy_maze|time_move_cnt:u1|segment:s1                        ; work         ;
+;       |segment:s1|                ; 138 (91)    ; 53           ; 0          ; 0    ; 0            ; 85 (61)      ; 1 (0)             ; 52 (30)          ; 37 (0)          ; 10 (4)     ; |easy_maze|time_move_cnt:u1|segment:s1                        ; work         ;
+;          |debounce:us|            ; 28 (28)     ; 22           ; 0          ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 21 (21)          ; 20 (20)         ; 1 (1)      ; |easy_maze|time_move_cnt:u1|segment:s1|debounce:us            ; work         ;
 ;          |divd_frequency:divd_1k| ; 19 (19)     ; 1            ; 0          ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 1 (1)            ; 17 (17)         ; 5 (5)      ; |easy_maze|time_move_cnt:u1|segment:s1|divd_frequency:divd_1k ; work         ;
 +-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -465,14 +469,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+----------+---------------+
 ; Name         ; Pin Type ; Pad to Core 0 ;
 +--------------+----------+---------------+
+; beep         ; Input    ; (0)           ;
+; rst          ; Input    ; (0)           ;
 ; pause        ; Input    ; (0)           ;
 ; map          ; Input    ; (0)           ;
-; rst          ; Input    ; (0)           ;
 ; clk_in       ; Input    ; (0)           ;
+; key[0]       ; Input    ; (0)           ;
 ; key[2]       ; Input    ; (0)           ;
 ; key[1]       ; Input    ; (0)           ;
-; key[0]       ; Input    ; (0)           ;
 ; key[3]       ; Input    ; (0)           ;
+; key_s        ; Input    ; (0)           ;
 ; row[0]       ; Output   ; --            ;
 ; row[1]       ; Output   ; --            ;
 ; row[2]       ; Output   ; --            ;
@@ -521,23 +527,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
 ; Name                                                        ; Location     ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ;
 +-------------------------------------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
-; clk_in                                                      ; PIN_18       ; 212     ; Clock                     ; yes    ; Global Clock         ; GCLK0            ;
-; direction_judge:u2|Mux2~0                                   ; LC_X9_Y8_N2  ; 75      ; Sync. load                ; no     ; --                   ; --               ;
-; direction_judge:u2|debounce:ud|key_edge[0]                  ; LC_X11_Y5_N5 ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
-; direction_judge:u2|debounce:ul|key_edge[0]                  ; LC_X16_Y8_N6 ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
-; direction_judge:u2|debounce:ur|key_edge[0]                  ; LC_X11_Y8_N3 ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
-; direction_judge:u2|debounce:uu|key_edge[0]                  ; LC_X15_Y8_N4 ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
-; direction_judge:u2|gold[0]~2                                ; LC_X8_Y8_N5  ; 4       ; Clock enable              ; no     ; --                   ; --               ;
-; direction_judge:u2|movecnt[0]~7                             ; LC_X7_Y8_N5  ; 60      ; Clock enable, Sync. load  ; no     ; --                   ; --               ;
-; direction_judge:u2|movecnt[4]~8                             ; LC_X12_Y6_N7 ; 4       ; Clock enable              ; no     ; --                   ; --               ;
-; led88:u3|always1~0                                          ; LC_X10_Y4_N9 ; 15      ; Latch enable              ; yes    ; Global Clock         ; GCLK2            ;
-; led88:u3|divd_frequency:divd_1k|clk_out                     ; LC_X3_Y6_N8  ; 4       ; Clock                     ; no     ; --                   ; --               ;
-; led88:u3|row[7]~0                                           ; LC_X10_Y4_N4 ; 16      ; Latch enable              ; yes    ; Global Clock         ; GCLK1            ;
-; rst                                                         ; PIN_124      ; 222     ; Async. clear, Async. load ; no     ; --                   ; --               ;
-; time_move_cnt:u1|divd_frequency:divd_1|clk_out              ; LC_X10_Y5_N7 ; 10      ; Clock                     ; yes    ; Global Clock         ; GCLK3            ;
-; time_move_cnt:u1|seg_data0[0]~1                             ; LC_X13_Y8_N8 ; 2       ; Sync. load                ; no     ; --                   ; --               ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|Equal0~5 ; LC_X11_Y7_N2 ; 8       ; Clock enable              ; no     ; --                   ; --               ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|clk_out  ; LC_X11_Y7_N6 ; 3       ; Clock                     ; no     ; --                   ; --               ;
+; clk_in                                                      ; PIN_18       ; 265     ; Clock                     ; yes    ; Global Clock         ; GCLK0            ;
+; direction_judge:u2|Mux2~0                                   ; LC_X5_Y7_N8  ; 76      ; Sync. load                ; no     ; --                   ; --               ;
+; direction_judge:u2|debounce:ud|key_edge[0]                  ; LC_X10_Y7_N9 ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
+; direction_judge:u2|debounce:ul|key_edge[0]                  ; LC_X16_Y6_N4 ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
+; direction_judge:u2|debounce:ur|key_edge[0]                  ; LC_X13_Y6_N5 ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
+; direction_judge:u2|debounce:uu|key_edge[0]                  ; LC_X4_Y7_N3  ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
+; direction_judge:u2|gold[0]~0                                ; LC_X9_Y5_N3  ; 4       ; Clock enable              ; no     ; --                   ; --               ;
+; direction_judge:u2|movecnt[3]~8                             ; LC_X8_Y8_N9  ; 60      ; Clock enable, Sync. load  ; no     ; --                   ; --               ;
+; direction_judge:u2|movecnt[7]~12                            ; LC_X8_Y8_N3  ; 4       ; Clock enable              ; no     ; --                   ; --               ;
+; led:u3|col_green[7]~5                                       ; LC_X12_Y3_N9 ; 8       ; Latch enable              ; yes    ; Global Clock         ; GCLK2            ;
+; led:u3|divd_frequency:divd_1k|clk_out                       ; LC_X4_Y8_N4  ; 4       ; Clock                     ; no     ; --                   ; --               ;
+; led:u3|row[7]~0                                             ; LC_X12_Y3_N2 ; 16      ; Latch enable              ; yes    ; Global Clock         ; GCLK1            ;
+; rst                                                         ; PIN_123      ; 258     ; Async. clear, Async. load ; no     ; --                   ; --               ;
+; time_move_cnt:u1|divd_frequency:divd_1|clk_out              ; LC_X16_Y7_N4 ; 10      ; Clock                     ; yes    ; Global Clock         ; GCLK3            ;
+; time_move_cnt:u1|seg_data0[3]~1                             ; LC_X12_Y3_N8 ; 4       ; Sync. load                ; no     ; --                   ; --               ;
+; time_move_cnt:u1|segment:s1|debounce:us|key_edge[0]         ; LC_X11_Y7_N9 ; 20      ; Sync. clear               ; no     ; --                   ; --               ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|Equal0~5 ; LC_X12_Y5_N8 ; 8       ; Clock enable              ; no     ; --                   ; --               ;
+; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|clk_out  ; LC_X12_Y5_N6 ; 3       ; Clock                     ; no     ; --                   ; --               ;
+; time_move_cnt:u1|segment:s1|seg_led[2]~19                   ; LC_X11_Y4_N7 ; 28      ; Clock enable              ; no     ; --                   ; --               ;
 +-------------------------------------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
 
 
@@ -546,10 +554,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------+--------------+---------+----------------------+------------------+
 ; Name                                           ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
 +------------------------------------------------+--------------+---------+----------------------+------------------+
-; clk_in                                         ; PIN_18       ; 212     ; Global Clock         ; GCLK0            ;
-; led88:u3|always1~0                             ; LC_X10_Y4_N9 ; 15      ; Global Clock         ; GCLK2            ;
-; led88:u3|row[7]~0                              ; LC_X10_Y4_N4 ; 16      ; Global Clock         ; GCLK1            ;
-; time_move_cnt:u1|divd_frequency:divd_1|clk_out ; LC_X10_Y5_N7 ; 10      ; Global Clock         ; GCLK3            ;
+; clk_in                                         ; PIN_18       ; 265     ; Global Clock         ; GCLK0            ;
+; led:u3|col_green[7]~5                          ; LC_X12_Y3_N9 ; 8       ; Global Clock         ; GCLK2            ;
+; led:u3|row[7]~0                                ; LC_X12_Y3_N2 ; 16      ; Global Clock         ; GCLK1            ;
+; time_move_cnt:u1|divd_frequency:divd_1|clk_out ; LC_X16_Y7_N4 ; 10      ; Global Clock         ; GCLK3            ;
 +------------------------------------------------+--------------+---------+----------------------+------------------+
 
 
@@ -558,56 +566,56 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------+---------+
 ; Name                                                        ; Fan-Out ;
 +-------------------------------------------------------------+---------+
-; rst                                                         ; 222     ;
-; direction_judge:u2|Mux3~1                                   ; 82      ;
-; direction_judge:u2|Mux2~0                                   ; 75      ;
-; direction_judge:u2|Mux1~1                                   ; 72      ;
-; direction_judge:u2|Mux0~2                                   ; 66      ;
-; direction_judge:u2|movecnt[0]~7                             ; 60      ;
-; led88:u3|cnt[1]                                             ; 51      ;
-; led88:u3|cnt[2]                                             ; 38      ;
-; led88:u3|cnt[0]                                             ; 27      ;
+; rst                                                         ; 258     ;
+; direction_judge:u2|Mux3~0                                   ; 84      ;
+; direction_judge:u2|Mux2~0                                   ; 76      ;
+; direction_judge:u2|Mux1~2                                   ; 69      ;
+; direction_judge:u2|Mux0~2                                   ; 67      ;
+; direction_judge:u2|movecnt[3]~8                             ; 60      ;
+; led:u3|cnt[1]                                               ; 55      ;
+; led:u3|cnt[2]                                               ; 41      ;
+; led:u3|cnt[0]                                               ; 33      ;
+; time_move_cnt:u1|segment:s1|seg_led[2]~19                   ; 28      ;
+; time_move_cnt:u1|segment:s1|cnt[0]                          ; 24      ;
+; time_move_cnt:u1|segment:s1|cnt[1]                          ; 24      ;
+; led:u3|st_judge                                             ; 21      ;
+; time_move_cnt:u1|segment:s1|debounce:us|key_edge[0]         ; 20      ;
 ; direction_judge:u2|debounce:ul|key_edge[0]                  ; 20      ;
-; direction_judge:u2|debounce:ud|key_edge[0]                  ; 20      ;
 ; direction_judge:u2|debounce:uu|key_edge[0]                  ; 20      ;
 ; direction_judge:u2|debounce:ur|key_edge[0]                  ; 20      ;
-; time_move_cnt:u1|flag                                       ; 17      ;
+; direction_judge:u2|debounce:ud|key_edge[0]                  ; 20      ;
+; time_move_cnt:u1|flag                                       ; 18      ;
 ; time_move_cnt:u1|divd_frequency:divd_1|Equal0~8             ; 13      ;
-; direction_judge:u2|ShiftLeft0~21                            ; 12      ;
-; win_judge                                                   ; 12      ;
-; time_move_cnt:u1|segment:s1|cnt[0]                          ; 12      ;
-; time_move_cnt:u1|segment:s1|cnt[1]                          ; 11      ;
-; direction_judge:u2|ShiftLeft0~26                            ; 10      ;
-; map                                                         ; 9       ;
-; direction_judge:u2|ShiftLeft0~29                            ; 9       ;
+; time_move_cnt:u1|seg_data0[0]                               ; 13      ;
+; direction_judge:u2|movecnt[0]                               ; 12      ;
+; pause                                                       ; 11      ;
+; direction_judge:u2|ShiftLeft0~20                            ; 11      ;
+; time_move_cnt:u1|seg_data1[0]                               ; 11      ;
+; direction_judge:u2|movecnt[4]                               ; 11      ;
+; time_move_cnt:u1|seg_data0[1]                               ; 11      ;
+; direction_judge:u2|movecnt[2]                               ; 11      ;
+; direction_judge:u2|movecnt[1]                               ; 11      ;
+; map                                                         ; 10      ;
+; direction_judge:u2|ShiftLeft0~33                            ; 10      ;
+; time_move_cnt:u1|seg_data1[1]                               ; 10      ;
+; direction_judge:u2|movecnt[6]                               ; 10      ;
+; direction_judge:u2|movecnt[5]                               ; 10      ;
+; time_move_cnt:u1|seg_data0[2]                               ; 10      ;
+; led:u3|col_red[1]~11                                        ; 9       ;
+; win_judge                                                   ; 9       ;
+; time_move_cnt:u1|seg_data1[2]                               ; 9       ;
 ; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|Equal0~5 ; 8       ;
-; direction_judge:u2|pos[9]                                   ; 8       ;
-; direction_judge:u2|ShiftLeft0~34                            ; 7       ;
-; direction_judge:u2|ShiftLeft0~31                            ; 7       ;
+; direction_judge:u2|ShiftLeft0~31                            ; 8       ;
+; direction_judge:u2|ShiftLeft0~41                            ; 7       ;
+; direction_judge:u2|ShiftLeft0~39                            ; 7       ;
 ; direction_judge:u2|pos[14]                                  ; 7       ;
 ; direction_judge:u2|pos[13]                                  ; 7       ;
 ; direction_judge:u2|pos[12]                                  ; 7       ;
 ; direction_judge:u2|pos[11]                                  ; 7       ;
 ; direction_judge:u2|pos[10]                                  ; 7       ;
-; time_move_cnt:u1|segment:s1|Mux0~1                          ; 7       ;
-; time_move_cnt:u1|segment:s1|Mux1~1                          ; 7       ;
-; time_move_cnt:u1|segment:s1|Mux2~1                          ; 7       ;
-; time_move_cnt:u1|segment:s1|Mux3~1                          ; 7       ;
-; time_move_cnt:u1|seg_data0[0]                               ; 7       ;
-; direction_judge:u2|pos[15]                                  ; 6       ;
-; direction_judge:u2|pos[8]                                   ; 6       ;
-; direction_judge:u2|movecnt[0]                               ; 6       ;
-; time_move_cnt:u1|divd_frequency:divd_1|Add0~117             ; 5       ;
-; time_move_cnt:u1|divd_frequency:divd_1|Add0~97              ; 5       ;
-; time_move_cnt:u1|divd_frequency:divd_1|Add0~67              ; 5       ;
-; time_move_cnt:u1|divd_frequency:divd_1|Add0~47              ; 5       ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|Add0~62  ; 5       ;
-; time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|Add0~2   ; 5       ;
-; direction_judge:u2|debounce:ul|cnt[14]~37                   ; 5       ;
-; direction_judge:u2|debounce:ul|cnt[9]~27                    ; 5       ;
-; direction_judge:u2|debounce:ul|cnt[4]~17                    ; 5       ;
-; direction_judge:u2|debounce:ud|cnt[14]~37                   ; 5       ;
-; direction_judge:u2|debounce:ud|cnt[9]~27                    ; 5       ;
+; direction_judge:u2|pos[9]                                   ; 7       ;
+; led:u3|col_red[2]~4                                         ; 7       ;
+; time_move_cnt:u1|segment:s1|seg_led[2]~14                   ; 7       ;
 +-------------------------------------------------------------+---------+
 
 
@@ -616,45 +624,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; C4s                        ; 685 / 2,870 ( 24 % )   ;
-; Direct links               ; 101 / 3,938 ( 3 % )    ;
+; C4s                        ; 692 / 2,870 ( 24 % )   ;
+; Direct links               ; 164 / 3,938 ( 4 % )    ;
 ; Global clocks              ; 4 / 4 ( 100 % )        ;
-; LAB clocks                 ; 25 / 72 ( 35 % )       ;
-; LUT chains                 ; 67 / 1,143 ( 6 % )     ;
-; Local interconnects        ; 1,043 / 3,938 ( 26 % ) ;
-; R4s                        ; 703 / 2,832 ( 25 % )   ;
+; LAB clocks                 ; 26 / 72 ( 36 % )       ;
+; LUT chains                 ; 68 / 1,143 ( 6 % )     ;
+; Local interconnects        ; 1,210 / 3,938 ( 31 % ) ;
+; R4s                        ; 870 / 2,832 ( 31 % )   ;
 +----------------------------+------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 8.10) ; Number of LABs  (Total = 80) ;
+; Number of Logic Elements  (Average = 8.24) ; Number of LABs  (Total = 93) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 5                            ;
-; 2                                          ; 3                            ;
+; 1                                          ; 4                            ;
+; 2                                          ; 4                            ;
 ; 3                                          ; 2                            ;
-; 4                                          ; 1                            ;
-; 5                                          ; 5                            ;
-; 6                                          ; 1                            ;
-; 7                                          ; 4                            ;
-; 8                                          ; 5                            ;
-; 9                                          ; 12                           ;
-; 10                                         ; 42                           ;
+; 4                                          ; 3                            ;
+; 5                                          ; 7                            ;
+; 6                                          ; 2                            ;
+; 7                                          ; 1                            ;
+; 8                                          ; 6                            ;
+; 9                                          ; 6                            ;
+; 10                                         ; 58                           ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.98) ; Number of LABs  (Total = 80) ;
+; LAB-wide Signals  (Average = 1.88) ; Number of LABs  (Total = 93) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 53                           ;
-; 1 Async. load                      ; 2                            ;
-; 1 Clock                            ; 55                           ;
-; 1 Clock enable                     ; 26                           ;
-; 1 Sync. clear                      ; 8                            ;
-; 1 Sync. load                       ; 12                           ;
+; 1 Async. clear                     ; 58                           ;
+; 1 Async. load                      ; 1                            ;
+; 1 Clock                            ; 63                           ;
+; 1 Clock enable                     ; 31                           ;
+; 1 Sync. clear                      ; 10                           ;
+; 1 Sync. load                       ; 10                           ;
 ; 2 Clocks                           ; 2                            ;
 +------------------------------------+------------------------------+
 
@@ -662,23 +670,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 8.85) ; Number of LABs  (Total = 80) ;
+; Number of Signals Sourced  (Average = 8.90) ; Number of LABs  (Total = 93) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 4                            ;
-; 2                                           ; 3                            ;
+; 2                                           ; 4                            ;
 ; 3                                           ; 1                            ;
-; 4                                           ; 2                            ;
-; 5                                           ; 5                            ;
-; 6                                           ; 0                            ;
-; 7                                           ; 5                            ;
-; 8                                           ; 3                            ;
+; 4                                           ; 3                            ;
+; 5                                           ; 6                            ;
+; 6                                           ; 3                            ;
+; 7                                           ; 2                            ;
+; 8                                           ; 2                            ;
 ; 9                                           ; 6                            ;
-; 10                                          ; 29                           ;
-; 11                                          ; 13                           ;
-; 12                                          ; 4                            ;
+; 10                                          ; 37                           ;
+; 11                                          ; 11                           ;
+; 12                                          ; 8                            ;
 ; 13                                          ; 3                            ;
-; 14                                          ; 1                            ;
+; 14                                          ; 2                            ;
 ; 15                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
@@ -686,52 +694,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 6.29) ; Number of LABs  (Total = 80) ;
+; Number of Signals Sourced Out  (Average = 6.09) ; Number of LABs  (Total = 93) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 7                            ;
-; 2                                               ; 8                            ;
-; 3                                               ; 2                            ;
-; 4                                               ; 11                           ;
-; 5                                               ; 1                            ;
+; 1                                               ; 14                           ;
+; 2                                               ; 7                            ;
+; 3                                               ; 9                            ;
+; 4                                               ; 8                            ;
+; 5                                               ; 2                            ;
 ; 6                                               ; 7                            ;
-; 7                                               ; 11                           ;
-; 8                                               ; 12                           ;
-; 9                                               ; 4                            ;
-; 10                                              ; 15                           ;
-; 11                                              ; 1                            ;
-; 12                                              ; 0                            ;
-; 13                                              ; 1                            ;
+; 7                                               ; 9                            ;
+; 8                                               ; 5                            ;
+; 9                                               ; 6                            ;
+; 10                                              ; 21                           ;
+; 11                                              ; 3                            ;
+; 12                                              ; 1                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 0                            ;
+; 15                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 11.85) ; Number of LABs  (Total = 80) ;
+; Number of Distinct Inputs  (Average = 11.97) ; Number of LABs  (Total = 93) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 1                            ;
-; 3                                            ; 5                            ;
-; 4                                            ; 10                           ;
-; 5                                            ; 0                            ;
-; 6                                            ; 4                            ;
-; 7                                            ; 2                            ;
-; 8                                            ; 3                            ;
-; 9                                            ; 3                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 6                            ;
-; 12                                           ; 6                            ;
-; 13                                           ; 6                            ;
-; 14                                           ; 3                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 8                            ;
-; 17                                           ; 8                            ;
-; 18                                           ; 2                            ;
+; 3                                            ; 10                           ;
+; 4                                            ; 9                            ;
+; 5                                            ; 2                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 4                            ;
+; 9                                            ; 5                            ;
+; 10                                           ; 3                            ;
+; 11                                           ; 7                            ;
+; 12                                           ; 3                            ;
+; 13                                           ; 4                            ;
+; 14                                           ; 5                            ;
+; 15                                           ; 3                            ;
+; 16                                           ; 10                           ;
+; 17                                           ; 9                            ;
+; 18                                           ; 5                            ;
 ; 19                                           ; 3                            ;
-; 20                                           ; 6                            ;
-; 21                                           ; 2                            ;
+; 20                                           ; 8                            ;
+; 21                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -763,7 +773,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sat Dec 22 16:41:37 2018
+    Info: Processing started: Wed Dec 26 17:58:11 2018
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off easy_maze -c easy_maze
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Selected device EPM1270T144C5 for design "easy_maze"
@@ -784,65 +794,58 @@ Info: Timing requirements not specified -- optimizing circuit to achieve the fol
     Info: Assuming a global tpd requirement of 1.0 ns
 Info: Completed User Assigned Global Signals Promotion Operation
 Info: Automatically promoted signal "clk_in" to use Global clock in PIN 18
-Info: Automatically promoted signal "led88:u3|row[7]~0" to use Global clock
+Info: Automatically promoted signal "led:u3|row[7]~0" to use Global clock
 Info: Automatically promoted some destinations of signal "time_move_cnt:u1|divd_frequency:divd_1|clk_out" to use Global clock
     Info: Destination "time_move_cnt:u1|divd_frequency:divd_1|clk_out" may be non-global or may not use global clock
-Info: Automatically promoted some destinations of signal "led88:u3|always1~0" to use Global clock
-    Info: Destination "led88:u3|col_red[0]~2" may be non-global or may not use global clock
-    Info: Destination "led88:u3|col_red[1]~5" may be non-global or may not use global clock
-    Info: Destination "led88:u3|col_red[2]~7" may be non-global or may not use global clock
-    Info: Destination "led88:u3|col_red[5]~13" may be non-global or may not use global clock
-    Info: Destination "led88:u3|col_red[6]~15" may be non-global or may not use global clock
-    Info: Destination "led88:u3|col_red[7]~17" may be non-global or may not use global clock
-    Info: Destination "direction_judge:u2|movecnt[0]~2" may be non-global or may not use global clock
+Info: Automatically promoted signal "led:u3|col_green[7]~5" to use Global clock
 Info: Completed Auto Global Promotion Operation
 Info: Starting register packing
 Info: Fitter is using Normal packing mode for logic elements with Auto setting for Auto Packed Registers logic option
 Info: Started processing fast register assignments
 Info: Finished processing fast register assignments
 Info: Finished register packing
-Info: Fitter preparation operations ending: elapsed time is 00:00:00
+Info: Fitter preparation operations ending: elapsed time is 00:00:01
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is register to register delay of 26.678 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X16_Y8; Fanout = 3; REG Node = 'direction_judge:u2|debounce:ul|key_sec[0]'
-    Info: 2: + IC(0.522 ns) + CELL(0.914 ns) = 1.436 ns; Loc. = LAB_X16_Y8; Fanout = 3; COMB Node = 'direction_judge:u2|debounce:ul|key_pulse[0]~0'
-    Info: 3: + IC(2.643 ns) + CELL(0.200 ns) = 4.279 ns; Loc. = LAB_X8_Y8; Fanout = 7; COMB Node = 'direction_judge:u2|Mux3~0'
-    Info: 4: + IC(1.059 ns) + CELL(0.200 ns) = 5.538 ns; Loc. = LAB_X8_Y8; Fanout = 67; COMB Node = 'direction_judge:u2|Mux0~2'
-    Info: 5: + IC(2.799 ns) + CELL(0.200 ns) = 8.537 ns; Loc. = LAB_X4_Y6; Fanout = 2; COMB Node = 'direction_judge:u2|ShiftRight0~9'
-    Info: 6: + IC(2.022 ns) + CELL(0.914 ns) = 11.473 ns; Loc. = LAB_X6_Y9; Fanout = 4; COMB Node = 'direction_judge:u2|ShiftRight0~11'
-    Info: 7: + IC(0.345 ns) + CELL(0.914 ns) = 12.732 ns; Loc. = LAB_X6_Y9; Fanout = 1; COMB Node = 'direction_judge:u2|pos[27]~COMBOUT'
-    Info: 8: + IC(1.444 ns) + CELL(0.914 ns) = 15.090 ns; Loc. = LAB_X6_Y5; Fanout = 1; COMB Node = 'direction_judge:u2|ShiftLeft0~95'
-    Info: 9: + IC(0.672 ns) + CELL(0.511 ns) = 16.273 ns; Loc. = LAB_X6_Y5; Fanout = 2; COMB Node = 'direction_judge:u2|ShiftLeft0~148'
-    Info: 10: + IC(1.610 ns) + CELL(0.740 ns) = 18.623 ns; Loc. = LAB_X7_Y8; Fanout = 1; COMB Node = 'direction_judge:u2|WideOr2~8'
-    Info: 11: + IC(0.672 ns) + CELL(0.511 ns) = 19.806 ns; Loc. = LAB_X7_Y8; Fanout = 1; COMB Node = 'direction_judge:u2|WideOr2~10'
-    Info: 12: + IC(1.059 ns) + CELL(0.200 ns) = 21.065 ns; Loc. = LAB_X7_Y8; Fanout = 2; COMB Node = 'direction_judge:u2|movecnt[0]~6'
-    Info: 13: + IC(0.443 ns) + CELL(0.740 ns) = 22.248 ns; Loc. = LAB_X7_Y8; Fanout = 60; COMB Node = 'direction_judge:u2|movecnt[0]~7'
-    Info: 14: + IC(2.522 ns) + CELL(1.908 ns) = 26.678 ns; Loc. = LAB_X11_Y10; Fanout = 7; REG Node = 'direction_judge:u2|pos[13]'
-    Info: Total cell delay = 8.866 ns ( 33.23 % )
-    Info: Total interconnect delay = 17.812 ns ( 66.77 % )
+Info: Estimated most critical path is register to register delay of 25.151 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X10_Y7; Fanout = 3; REG Node = 'direction_judge:u2|debounce:uu|key_sec[0]'
+    Info: 2: + IC(0.522 ns) + CELL(0.914 ns) = 1.436 ns; Loc. = LAB_X10_Y7; Fanout = 4; COMB Node = 'direction_judge:u2|debounce:uu|key_pulse[0]'
+    Info: 3: + IC(0.842 ns) + CELL(0.740 ns) = 3.018 ns; Loc. = LAB_X9_Y7; Fanout = 7; COMB Node = 'direction_judge:u2|Mux1~0'
+    Info: 4: + IC(1.059 ns) + CELL(0.200 ns) = 4.277 ns; Loc. = LAB_X9_Y7; Fanout = 67; COMB Node = 'direction_judge:u2|Mux0~2'
+    Info: 5: + IC(2.763 ns) + CELL(0.200 ns) = 7.240 ns; Loc. = LAB_X7_Y6; Fanout = 4; COMB Node = 'direction_judge:u2|ShiftRight0~16'
+    Info: 6: + IC(1.388 ns) + CELL(0.914 ns) = 9.542 ns; Loc. = LAB_X7_Y7; Fanout = 2; COMB Node = 'direction_judge:u2|ShiftRight0~97'
+    Info: 7: + IC(0.345 ns) + CELL(0.914 ns) = 10.801 ns; Loc. = LAB_X7_Y7; Fanout = 1; COMB Node = 'direction_judge:u2|pos[27]~COMBOUT'
+    Info: 8: + IC(1.318 ns) + CELL(0.914 ns) = 13.033 ns; Loc. = LAB_X5_Y7; Fanout = 1; COMB Node = 'direction_judge:u2|ShiftLeft0~93'
+    Info: 9: + IC(0.672 ns) + CELL(0.511 ns) = 14.216 ns; Loc. = LAB_X5_Y7; Fanout = 2; COMB Node = 'direction_judge:u2|ShiftLeft0~149'
+    Info: 10: + IC(0.269 ns) + CELL(0.914 ns) = 15.399 ns; Loc. = LAB_X5_Y7; Fanout = 1; COMB Node = 'direction_judge:u2|WideOr2~8'
+    Info: 11: + IC(2.376 ns) + CELL(0.511 ns) = 18.286 ns; Loc. = LAB_X8_Y8; Fanout = 1; COMB Node = 'direction_judge:u2|WideOr2~10'
+    Info: 12: + IC(1.059 ns) + CELL(0.200 ns) = 19.545 ns; Loc. = LAB_X8_Y8; Fanout = 2; COMB Node = 'direction_judge:u2|movecnt[3]~7'
+    Info: 13: + IC(0.443 ns) + CELL(0.740 ns) = 20.728 ns; Loc. = LAB_X8_Y8; Fanout = 60; COMB Node = 'direction_judge:u2|movecnt[3]~8'
+    Info: 14: + IC(2.515 ns) + CELL(1.908 ns) = 25.151 ns; Loc. = LAB_X10_Y6; Fanout = 7; REG Node = 'direction_judge:u2|pos[14]'
+    Info: Total cell delay = 9.580 ns ( 38.09 % )
+    Info: Total interconnect delay = 15.571 ns ( 61.91 % )
 Info: Fitter routing operations beginning
-Info: Average interconnect usage is 23% of the available device resources
-    Info: Peak interconnect usage is 32% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
+Info: Average interconnect usage is 24% of the available device resources
+    Info: Peak interconnect usage is 29% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
 Info: Fitter routing operations ending: elapsed time is 00:00:01
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
     Info: Optimizations that may affect the design's timing were skipped
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info: Generated suppressed messages file C:/Users/Administrator/Desktop/migong/easy_maze.fit.smsg
+Info: Generated suppressed messages file C:/Users/Administrator/Desktop/migongbeep/easy_maze.fit.smsg
 Info: Quartus II Fitter was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 238 megabytes
-    Info: Processing ended: Sat Dec 22 16:41:38 2018
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 239 megabytes
+    Info: Processing ended: Wed Dec 26 17:58:13 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/Administrator/Desktop/migong/easy_maze.fit.smsg.
+The suppressed messages can be found in C:/Users/Administrator/Desktop/migongbeep/easy_maze.fit.smsg.
 
 

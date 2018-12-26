@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Sat Dec 22 16:50:59 2018
+Analysis & Synthesis Status : Successful - Wed Dec 26 17:58:11 2018
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : easy_maze
 Top-level Entity Name : easy_maze
 Family : MAX II
-Total logic elements : 708
-Total pins : 48
+Total logic elements : 831
+Total pins : 50
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

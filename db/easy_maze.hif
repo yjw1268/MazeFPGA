@@ -1,0 +1,341 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Full Version
+45
+3268
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+easy_maze
+# storage
+db|easy_maze.(0).cnf
+db|easy_maze.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+easy_maze.v
+ddff8522ad234b955eddc438c58603f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+time_move_cnt
+# storage
+db|easy_maze.(1).cnf
+db|easy_maze.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+easy_maze.v
+ddff8522ad234b955eddc438c58603f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+time_move_cnt:u1
+}
+# macro_sequence
+
+# end
+# entity
+divd_frequency
+# storage
+db|easy_maze.(2).cnf
+db|easy_maze.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+easy_maze.v
+ddff8522ad234b955eddc438c58603f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+divdWIDTH
+28
+PARAMETER_SIGNED_DEC
+USR
+divdN
+50000000
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+time_move_cnt:u1|divd_frequency:divd_1
+}
+# macro_sequence
+
+# end
+# entity
+segment
+# storage
+db|easy_maze.(3).cnf
+db|easy_maze.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+easy_maze.v
+ddff8522ad234b955eddc438c58603f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+time_move_cnt:u1|segment:s1
+}
+# macro_sequence
+
+# end
+# entity
+divd_frequency
+# storage
+db|easy_maze.(4).cnf
+db|easy_maze.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+easy_maze.v
+ddff8522ad234b955eddc438c58603f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+divdWIDTH
+16
+PARAMETER_SIGNED_DEC
+USR
+divdN
+50000
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+time_move_cnt:u1|segment:s1|divd_frequency:divd_1k
+led88:u3|divd_frequency:divd_1k
+}
+# macro_sequence
+
+# end
+# entity
+direction_judge
+# storage
+db|easy_maze.(5).cnf
+db|easy_maze.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+easy_maze.v
+ddff8522ad234b955eddc438c58603f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+direction_judge:u2
+}
+# macro_sequence
+
+# end
+# entity
+debounce
+# storage
+db|easy_maze.(6).cnf
+db|easy_maze.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+easy_maze.v
+ddff8522ad234b955eddc438c58603f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+N
+1
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+direction_judge:u2|debounce:ul
+direction_judge:u2|debounce:ur
+direction_judge:u2|debounce:uu
+direction_judge:u2|debounce:ud
+}
+# macro_sequence
+
+# end
+# entity
+led88
+# storage
+db|easy_maze.(7).cnf
+db|easy_maze.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+easy_maze.v
+ddff8522ad234b955eddc438c58603f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+led88:u3
+}
+# macro_sequence
+
+# end
+# complete
+
