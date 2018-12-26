@@ -1,0 +1,857 @@
+Classic Timing Analyzer report for easy_maze
+Sat Dec 22 16:41:41 2018
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk_in'
+  7. Clock Hold: 'clk_in'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                    ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------------------------+----------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                                      ; To                         ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------------------------+----------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 3.133 ns                         ; rst                                       ; direction_judge:u2|goru[3] ; --         ; clk_in   ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 22.441 ns                        ; led88:u3|col_red[1]                       ; col_red[1]                 ; clk_in     ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 10.223 ns                        ; map                                       ; led88:u3|col_red[1]        ; --         ; clk_in   ; 0            ;
+; Clock Setup: 'clk_in'        ; N/A                                      ; None          ; 38.45 MHz ( period = 26.011 ns ) ; direction_judge:u2|debounce:uu|key_sec[0] ; direction_judge:u2|pos[29] ; clk_in     ; clk_in   ; 0            ;
+; Clock Hold: 'clk_in'         ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; direction_judge:u2|pos[41]                ; led88:u3|col_green[1]      ; clk_in     ; clk_in   ; 147          ;
+; Total number of failed paths ;                                          ;               ;                                  ;                                           ;                            ;            ;          ; 147          ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------------------------+----------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EPM1270T144C5      ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk_in          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk_in'                                                                                                                                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                          ; To                            ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 38.45 MHz ( period = 26.011 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[37]    ; clk_in     ; clk_in   ; None                        ; None                      ; 25.302 ns               ;
+; N/A                                     ; 38.45 MHz ( period = 26.011 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[29]    ; clk_in     ; clk_in   ; None                        ; None                      ; 25.302 ns               ;
+; N/A                                     ; 38.51 MHz ( period = 25.969 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[13]    ; clk_in     ; clk_in   ; None                        ; None                      ; 25.260 ns               ;
+; N/A                                     ; 38.51 MHz ( period = 25.969 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[14]    ; clk_in     ; clk_in   ; None                        ; None                      ; 25.260 ns               ;
+; N/A                                     ; 38.65 MHz ( period = 25.875 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|movecnt[4] ; clk_in     ; clk_in   ; None                        ; None                      ; 25.166 ns               ;
+; N/A                                     ; 38.65 MHz ( period = 25.875 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|movecnt[5] ; clk_in     ; clk_in   ; None                        ; None                      ; 25.166 ns               ;
+; N/A                                     ; 38.65 MHz ( period = 25.875 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|movecnt[7] ; clk_in     ; clk_in   ; None                        ; None                      ; 25.166 ns               ;
+; N/A                                     ; 39.24 MHz ( period = 25.484 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[50]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.775 ns               ;
+; N/A                                     ; 39.27 MHz ( period = 25.466 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[15]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.757 ns               ;
+; N/A                                     ; 39.27 MHz ( period = 25.466 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[16]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.757 ns               ;
+; N/A                                     ; 39.28 MHz ( period = 25.459 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[32]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.750 ns               ;
+; N/A                                     ; 39.28 MHz ( period = 25.459 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[37]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.750 ns               ;
+; N/A                                     ; 39.28 MHz ( period = 25.459 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[29]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.750 ns               ;
+; N/A                                     ; 39.28 MHz ( period = 25.459 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[47]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.750 ns               ;
+; N/A                                     ; 39.29 MHz ( period = 25.451 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[20]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.742 ns               ;
+; N/A                                     ; 39.29 MHz ( period = 25.450 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[37]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.741 ns               ;
+; N/A                                     ; 39.29 MHz ( period = 25.450 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[29]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.741 ns               ;
+; N/A                                     ; 39.31 MHz ( period = 25.441 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[10]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.732 ns               ;
+; N/A                                     ; 39.31 MHz ( period = 25.441 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[11]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.732 ns               ;
+; N/A                                     ; 39.31 MHz ( period = 25.441 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[12]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.732 ns               ;
+; N/A                                     ; 39.32 MHz ( period = 25.432 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[49]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.723 ns               ;
+; N/A                                     ; 39.32 MHz ( period = 25.432 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[51]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.723 ns               ;
+; N/A                                     ; 39.32 MHz ( period = 25.432 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[52]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.723 ns               ;
+; N/A                                     ; 39.32 MHz ( period = 25.432 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[60]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.723 ns               ;
+; N/A                                     ; 39.32 MHz ( period = 25.432 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[53]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.723 ns               ;
+; N/A                                     ; 39.32 MHz ( period = 25.432 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[61]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.723 ns               ;
+; N/A                                     ; 39.33 MHz ( period = 25.429 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[36]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.720 ns               ;
+; N/A                                     ; 39.33 MHz ( period = 25.429 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[44]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.720 ns               ;
+; N/A                                     ; 39.34 MHz ( period = 25.417 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[13]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.708 ns               ;
+; N/A                                     ; 39.34 MHz ( period = 25.417 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[14]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.708 ns               ;
+; N/A                                     ; 39.36 MHz ( period = 25.408 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[13]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.699 ns               ;
+; N/A                                     ; 39.36 MHz ( period = 25.408 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[14]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.699 ns               ;
+; N/A                                     ; 39.39 MHz ( period = 25.387 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[40]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.678 ns               ;
+; N/A                                     ; 39.40 MHz ( period = 25.383 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[45]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.674 ns               ;
+; N/A                                     ; 39.40 MHz ( period = 25.378 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[28]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.669 ns               ;
+; N/A                                     ; 39.40 MHz ( period = 25.378 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[54]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.669 ns               ;
+; N/A                                     ; 39.40 MHz ( period = 25.378 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[30]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.669 ns               ;
+; N/A                                     ; 39.41 MHz ( period = 25.374 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[9]     ; clk_in     ; clk_in   ; None                        ; None                      ; 24.665 ns               ;
+; N/A                                     ; 39.49 MHz ( period = 25.325 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[46]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.616 ns               ;
+; N/A                                     ; 39.49 MHz ( period = 25.323 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|movecnt[4] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.614 ns               ;
+; N/A                                     ; 39.49 MHz ( period = 25.323 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|movecnt[5] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.614 ns               ;
+; N/A                                     ; 39.49 MHz ( period = 25.323 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|movecnt[7] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.614 ns               ;
+; N/A                                     ; 39.50 MHz ( period = 25.318 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[57]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.609 ns               ;
+; N/A                                     ; 39.50 MHz ( period = 25.314 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|movecnt[4] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.605 ns               ;
+; N/A                                     ; 39.50 MHz ( period = 25.314 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|movecnt[5] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.605 ns               ;
+; N/A                                     ; 39.50 MHz ( period = 25.314 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|movecnt[7] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.605 ns               ;
+; N/A                                     ; 39.53 MHz ( period = 25.297 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[37]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.588 ns               ;
+; N/A                                     ; 39.53 MHz ( period = 25.297 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[29]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.588 ns               ;
+; N/A                                     ; 39.60 MHz ( period = 25.255 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[13]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.546 ns               ;
+; N/A                                     ; 39.60 MHz ( period = 25.255 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[14]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.546 ns               ;
+; N/A                                     ; 39.74 MHz ( period = 25.161 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|movecnt[4] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.452 ns               ;
+; N/A                                     ; 39.74 MHz ( period = 25.161 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|movecnt[5] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.452 ns               ;
+; N/A                                     ; 39.74 MHz ( period = 25.161 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|movecnt[7] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.452 ns               ;
+; N/A                                     ; 40.08 MHz ( period = 24.947 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[37]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.238 ns               ;
+; N/A                                     ; 40.08 MHz ( period = 24.947 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[29]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.238 ns               ;
+; N/A                                     ; 40.11 MHz ( period = 24.932 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[50]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.223 ns               ;
+; N/A                                     ; 40.12 MHz ( period = 24.923 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[50]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.214 ns               ;
+; N/A                                     ; 40.14 MHz ( period = 24.914 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[15]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.205 ns               ;
+; N/A                                     ; 40.14 MHz ( period = 24.914 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[16]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.205 ns               ;
+; N/A                                     ; 40.15 MHz ( period = 24.907 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[32]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.198 ns               ;
+; N/A                                     ; 40.15 MHz ( period = 24.907 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[47]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.198 ns               ;
+; N/A                                     ; 40.15 MHz ( period = 24.905 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[15]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.196 ns               ;
+; N/A                                     ; 40.15 MHz ( period = 24.905 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[16]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.196 ns               ;
+; N/A                                     ; 40.15 MHz ( period = 24.905 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[13]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.196 ns               ;
+; N/A                                     ; 40.15 MHz ( period = 24.905 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[14]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.196 ns               ;
+; N/A                                     ; 40.16 MHz ( period = 24.899 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[20]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.190 ns               ;
+; N/A                                     ; 40.16 MHz ( period = 24.898 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[32]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.189 ns               ;
+; N/A                                     ; 40.16 MHz ( period = 24.898 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[47]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.189 ns               ;
+; N/A                                     ; 40.18 MHz ( period = 24.890 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[20]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.181 ns               ;
+; N/A                                     ; 40.18 MHz ( period = 24.889 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[10]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.180 ns               ;
+; N/A                                     ; 40.18 MHz ( period = 24.889 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[11]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.180 ns               ;
+; N/A                                     ; 40.18 MHz ( period = 24.889 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[12]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.180 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[49]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[10]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[51]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[11]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[52]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[60]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[12]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[53]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.19 MHz ( period = 24.880 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[61]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.171 ns               ;
+; N/A                                     ; 40.20 MHz ( period = 24.877 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[36]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.168 ns               ;
+; N/A                                     ; 40.20 MHz ( period = 24.877 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[44]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.168 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.871 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[49]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.162 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.871 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[51]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.162 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.871 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[52]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.162 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.871 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[60]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.162 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.871 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[53]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.162 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.871 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[61]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.162 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.870 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|movecnt[0] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.161 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.870 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|movecnt[1] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.161 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.870 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|movecnt[3] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.161 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.870 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[48]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.161 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.870 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[39]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.161 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.868 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[36]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.159 ns               ;
+; N/A                                     ; 40.21 MHz ( period = 24.868 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[44]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.159 ns               ;
+; N/A                                     ; 40.22 MHz ( period = 24.865 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|movecnt[6] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.156 ns               ;
+; N/A                                     ; 40.22 MHz ( period = 24.863 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[62]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.154 ns               ;
+; N/A                                     ; 40.24 MHz ( period = 24.849 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[8]     ; clk_in     ; clk_in   ; None                        ; None                      ; 24.140 ns               ;
+; N/A                                     ; 40.25 MHz ( period = 24.846 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[59]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.137 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.839 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[58]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.130 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.839 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[41]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.130 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.839 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[34]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.130 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.839 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[18]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.130 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.839 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[26]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.130 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.839 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[42]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.130 ns               ;
+; N/A                                     ; 40.27 MHz ( period = 24.835 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[40]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.126 ns               ;
+; N/A                                     ; 40.27 MHz ( period = 24.831 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[45]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.122 ns               ;
+; N/A                                     ; 40.27 MHz ( period = 24.830 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[24]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.121 ns               ;
+; N/A                                     ; 40.27 MHz ( period = 24.830 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[33]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.121 ns               ;
+; N/A                                     ; 40.28 MHz ( period = 24.826 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[40]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.117 ns               ;
+; N/A                                     ; 40.28 MHz ( period = 24.826 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[28]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.117 ns               ;
+; N/A                                     ; 40.28 MHz ( period = 24.826 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[54]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.117 ns               ;
+; N/A                                     ; 40.28 MHz ( period = 24.826 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[30]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.117 ns               ;
+; N/A                                     ; 40.29 MHz ( period = 24.822 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[9]     ; clk_in     ; clk_in   ; None                        ; None                      ; 24.113 ns               ;
+; N/A                                     ; 40.29 MHz ( period = 24.822 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[45]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.113 ns               ;
+; N/A                                     ; 40.29 MHz ( period = 24.817 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[28]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.108 ns               ;
+; N/A                                     ; 40.29 MHz ( period = 24.817 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[54]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.108 ns               ;
+; N/A                                     ; 40.29 MHz ( period = 24.817 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[30]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.108 ns               ;
+; N/A                                     ; 40.30 MHz ( period = 24.813 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[9]     ; clk_in     ; clk_in   ; None                        ; None                      ; 24.104 ns               ;
+; N/A                                     ; 40.30 MHz ( period = 24.811 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|movecnt[4] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.102 ns               ;
+; N/A                                     ; 40.30 MHz ( period = 24.811 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|movecnt[5] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.102 ns               ;
+; N/A                                     ; 40.30 MHz ( period = 24.811 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|movecnt[7] ; clk_in     ; clk_in   ; None                        ; None                      ; 24.102 ns               ;
+; N/A                                     ; 40.30 MHz ( period = 24.811 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[35]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.102 ns               ;
+; N/A                                     ; 40.30 MHz ( period = 24.811 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[43]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.102 ns               ;
+; N/A                                     ; 40.32 MHz ( period = 24.803 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[17]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.094 ns               ;
+; N/A                                     ; 40.32 MHz ( period = 24.803 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[25]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.094 ns               ;
+; N/A                                     ; 40.35 MHz ( period = 24.786 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[38]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.077 ns               ;
+; N/A                                     ; 40.35 MHz ( period = 24.786 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[31]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.077 ns               ;
+; N/A                                     ; 40.37 MHz ( period = 24.773 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[46]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.064 ns               ;
+; N/A                                     ; 40.37 MHz ( period = 24.770 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[50]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.061 ns               ;
+; N/A                                     ; 40.38 MHz ( period = 24.766 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[57]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.057 ns               ;
+; N/A                                     ; 40.38 MHz ( period = 24.764 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[46]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.055 ns               ;
+; N/A                                     ; 40.39 MHz ( period = 24.757 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[57]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.048 ns               ;
+; N/A                                     ; 40.40 MHz ( period = 24.752 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[15]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.043 ns               ;
+; N/A                                     ; 40.40 MHz ( period = 24.752 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[16]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.043 ns               ;
+; N/A                                     ; 40.41 MHz ( period = 24.745 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[32]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.036 ns               ;
+; N/A                                     ; 40.41 MHz ( period = 24.745 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[47]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.036 ns               ;
+; N/A                                     ; 40.42 MHz ( period = 24.738 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[19]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.029 ns               ;
+; N/A                                     ; 40.42 MHz ( period = 24.738 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[27]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.029 ns               ;
+; N/A                                     ; 40.43 MHz ( period = 24.737 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[20]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.028 ns               ;
+; N/A                                     ; 40.44 MHz ( period = 24.727 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[10]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.018 ns               ;
+; N/A                                     ; 40.44 MHz ( period = 24.727 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[11]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.018 ns               ;
+; N/A                                     ; 40.44 MHz ( period = 24.727 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[12]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.018 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.718 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[49]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.009 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.718 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[51]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.009 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.718 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[52]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.009 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.718 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[60]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.009 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.718 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[53]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.009 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.718 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[61]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.009 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.717 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[56]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.008 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.717 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[55]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.008 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.717 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[63]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.008 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.715 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[36]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.006 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.715 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[44]    ; clk_in     ; clk_in   ; None                        ; None                      ; 24.006 ns               ;
+; N/A                                     ; 40.53 MHz ( period = 24.673 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[40]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.964 ns               ;
+; N/A                                     ; 40.53 MHz ( period = 24.672 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[21]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.963 ns               ;
+; N/A                                     ; 40.53 MHz ( period = 24.672 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[22]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.963 ns               ;
+; N/A                                     ; 40.53 MHz ( period = 24.672 ns )                    ; direction_judge:u2|debounce:uu|key_sec[0]     ; direction_judge:u2|pos[23]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.963 ns               ;
+; N/A                                     ; 40.54 MHz ( period = 24.669 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[45]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.960 ns               ;
+; N/A                                     ; 40.54 MHz ( period = 24.664 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[28]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.955 ns               ;
+; N/A                                     ; 40.54 MHz ( period = 24.664 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[54]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.955 ns               ;
+; N/A                                     ; 40.54 MHz ( period = 24.664 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[30]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.955 ns               ;
+; N/A                                     ; 40.55 MHz ( period = 24.660 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[9]     ; clk_in     ; clk_in   ; None                        ; None                      ; 23.951 ns               ;
+; N/A                                     ; 40.63 MHz ( period = 24.611 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[46]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.902 ns               ;
+; N/A                                     ; 40.64 MHz ( period = 24.604 ns )                    ; direction_judge:u2|debounce:ud|key_sec[0]     ; direction_judge:u2|pos[57]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.895 ns               ;
+; N/A                                     ; 40.95 MHz ( period = 24.420 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[50]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.711 ns               ;
+; N/A                                     ; 40.98 MHz ( period = 24.402 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[15]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.693 ns               ;
+; N/A                                     ; 40.98 MHz ( period = 24.402 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[16]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.693 ns               ;
+; N/A                                     ; 40.99 MHz ( period = 24.395 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[32]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.686 ns               ;
+; N/A                                     ; 40.99 MHz ( period = 24.395 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[47]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.686 ns               ;
+; N/A                                     ; 41.01 MHz ( period = 24.387 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[20]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.678 ns               ;
+; N/A                                     ; 41.02 MHz ( period = 24.377 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[10]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.668 ns               ;
+; N/A                                     ; 41.02 MHz ( period = 24.377 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[11]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.668 ns               ;
+; N/A                                     ; 41.02 MHz ( period = 24.377 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[12]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.668 ns               ;
+; N/A                                     ; 41.04 MHz ( period = 24.368 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[49]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.659 ns               ;
+; N/A                                     ; 41.04 MHz ( period = 24.368 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[51]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.659 ns               ;
+; N/A                                     ; 41.04 MHz ( period = 24.368 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[52]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.659 ns               ;
+; N/A                                     ; 41.04 MHz ( period = 24.368 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[60]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.659 ns               ;
+; N/A                                     ; 41.04 MHz ( period = 24.368 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[53]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.659 ns               ;
+; N/A                                     ; 41.04 MHz ( period = 24.368 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[61]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.659 ns               ;
+; N/A                                     ; 41.04 MHz ( period = 24.365 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[36]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.656 ns               ;
+; N/A                                     ; 41.04 MHz ( period = 24.365 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[44]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.656 ns               ;
+; N/A                                     ; 41.11 MHz ( period = 24.323 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[40]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.614 ns               ;
+; N/A                                     ; 41.12 MHz ( period = 24.319 ns )                    ; direction_judge:u2|debounce:ur|key_sec[0]     ; direction_judge:u2|pos[37]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.610 ns               ;
+; N/A                                     ; 41.12 MHz ( period = 24.319 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[45]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.610 ns               ;
+; N/A                                     ; 41.12 MHz ( period = 24.319 ns )                    ; direction_judge:u2|debounce:ur|key_sec[0]     ; direction_judge:u2|pos[29]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.610 ns               ;
+; N/A                                     ; 41.12 MHz ( period = 24.318 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|movecnt[0] ; clk_in     ; clk_in   ; None                        ; None                      ; 23.609 ns               ;
+; N/A                                     ; 41.12 MHz ( period = 24.318 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|movecnt[1] ; clk_in     ; clk_in   ; None                        ; None                      ; 23.609 ns               ;
+; N/A                                     ; 41.12 MHz ( period = 24.318 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|movecnt[3] ; clk_in     ; clk_in   ; None                        ; None                      ; 23.609 ns               ;
+; N/A                                     ; 41.12 MHz ( period = 24.318 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[48]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.609 ns               ;
+; N/A                                     ; 41.12 MHz ( period = 24.318 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[39]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.609 ns               ;
+; N/A                                     ; 41.13 MHz ( period = 24.314 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[28]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.605 ns               ;
+; N/A                                     ; 41.13 MHz ( period = 24.314 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[54]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.605 ns               ;
+; N/A                                     ; 41.13 MHz ( period = 24.314 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[30]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.605 ns               ;
+; N/A                                     ; 41.13 MHz ( period = 24.313 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|movecnt[6] ; clk_in     ; clk_in   ; None                        ; None                      ; 23.604 ns               ;
+; N/A                                     ; 41.13 MHz ( period = 24.311 ns )                    ; direction_judge:u2|debounce:uu|key_sec_pre[0] ; direction_judge:u2|pos[62]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.602 ns               ;
+; N/A                                     ; 41.14 MHz ( period = 24.310 ns )                    ; direction_judge:u2|debounce:ul|key_sec_pre[0] ; direction_judge:u2|pos[9]     ; clk_in     ; clk_in   ; None                        ; None                      ; 23.601 ns               ;
+; N/A                                     ; 41.14 MHz ( period = 24.309 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|movecnt[3] ; clk_in     ; clk_in   ; None                        ; None                      ; 23.600 ns               ;
+; N/A                                     ; 41.14 MHz ( period = 24.309 ns )                    ; direction_judge:u2|debounce:ul|key_sec[0]     ; direction_judge:u2|pos[48]    ; clk_in     ; clk_in   ; None                        ; None                      ; 23.600 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                               ;                               ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk_in'                                                                                                                                                                                               ;
++------------------------------------------+----------------------------+-------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                       ; To                            ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+----------------------------+-------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[41] ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 4.146 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; led88:u3|col_red[3]           ; clk_in     ; clk_in   ; None                       ; None                       ; 4.732 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[12] ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 4.770 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[20] ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 4.791 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; led88:u3|col_red[2]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.446 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[33] ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.401 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; led88:u3|col_red[1]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.761 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[16] ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.154 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[28] ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.778 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; led88:u3|col_red[6]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.045 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; led88:u3|col_red[4]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.509 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 3.825 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[9]  ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.134 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; led88:u3|col_red[0]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.744 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 3.999 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; led88:u3|col_red[7]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.892 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[54] ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.332 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[14] ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.384 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[39] ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.994 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[43] ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.051 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[17] ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.604 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[30] ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.580 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|row[2]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.760 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 4.544 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 4.075 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|row[6]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.350 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_red[3]           ; clk_in     ; clk_in   ; None                       ; None                       ; 4.726 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|row[2]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.974 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_red[3]           ; clk_in     ; clk_in   ; None                       ; None                       ; 4.844 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[55] ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|row[1]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.530 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; led88:u3|col_red[5]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.545 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|row[6]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.564 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[15] ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.483 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_red[6]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.022 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_red[1]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.024 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|row[4]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.667 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|row[0]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.520 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_red[3]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.028 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|row[5]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.689 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|row[0]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.549 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[51] ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.606 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|row[1]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.744 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[53] ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.701 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 4.551 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[35] ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.691 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_red[6]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.230 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|row[3]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.735 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_red[1]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.247 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.151 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|row[4]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.885 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|row[5]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.906 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|row[0]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.790 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 4.728 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_red[2]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.361 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_red[2]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.390 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.276 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|row[3]               ; clk_in     ; clk_in   ; None                       ; None                       ; 4.896 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[27] ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.951 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[38] ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.543 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|row[2]               ; clk_in     ; clk_in   ; None                       ; None                       ; 5.680 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[13] ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.119 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[11] ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.099 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.510 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_red[2]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.631 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|row[3]               ; clk_in     ; clk_in   ; None                       ; None                       ; 5.148 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|row[6]               ; clk_in     ; clk_in   ; None                       ; None                       ; 5.271 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[47] ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.172 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.131 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[29] ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.346 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[44] ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.880 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|row[1]               ; clk_in     ; clk_in   ; None                       ; None                       ; 5.451 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[24] ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.371 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.212 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[22] ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.908 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|row[4]               ; clk_in     ; clk_in   ; None                       ; None                       ; 5.607 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|row[5]               ; clk_in     ; clk_in   ; None                       ; None                       ; 5.617 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.379 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_red[6]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.061 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.418 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[36] ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.140 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[60] ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.178 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[19] ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.640 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_red[4]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.588 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[21] ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.756 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_red[1]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.248 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[46] ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.270 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.148 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[57] ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.397 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.722 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_red[4]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.775 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.737 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_red[4]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.837 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_red[7]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.918 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_red[0]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.918 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|row[7]               ; clk_in     ; clk_in   ; None                       ; None                       ; 5.940 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_red[0]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.001 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[32] ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.050 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 5.856 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[1]            ; led88:u3|col_red[5]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.976 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[37] ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.066 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[52] ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.587 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_red[0]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.036 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_red[7]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.066 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[23] ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.145 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_red[7]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.183 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|row[7]               ; clk_in     ; clk_in   ; None                       ; None                       ; 6.148 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[10] ; led88:u3|col_green[2]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.214 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_red[5]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.198 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.223 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[61] ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.570 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_red[5]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.554 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 6.473 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[62] ; led88:u3|col_green[6]         ; clk_in     ; clk_in   ; None                       ; None                       ; 9.238 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[18] ; led88:u3|col_green[2]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.761 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[45] ; led88:u3|col_green[5]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.844 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.260 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[63] ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.902 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[34] ; led88:u3|col_green[2]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.930 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[40] ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.982 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[50] ; led88:u3|col_green[2]         ; clk_in     ; clk_in   ; None                       ; None                       ; 8.993 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|row[7]               ; clk_in     ; clk_in   ; None                       ; None                       ; 6.979 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[2]            ; led88:u3|col_green[4]         ; clk_in     ; clk_in   ; None                       ; None                       ; 7.503 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[58] ; led88:u3|col_green[2]         ; clk_in     ; clk_in   ; None                       ; None                       ; 9.328 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[42] ; led88:u3|col_green[2]         ; clk_in     ; clk_in   ; None                       ; None                       ; 9.546 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[8]  ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 9.625 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[59] ; led88:u3|col_green[3]         ; clk_in     ; clk_in   ; None                       ; None                       ; 9.624 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[26] ; led88:u3|col_green[2]         ; clk_in     ; clk_in   ; None                       ; None                       ; 9.678 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[31] ; led88:u3|col_green[7]         ; clk_in     ; clk_in   ; None                       ; None                       ; 9.962 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[48] ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 10.210 ns                ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[49] ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 10.844 ns                ;
+; Not operational: Clock Skew > Data Delay ; time_move_cnt:u1|flag      ; led88:u3|col_red[3]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.223 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; time_move_cnt:u1|flag         ; clk_in     ; clk_in   ; None                       ; None                       ; 3.258 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[56] ; led88:u3|col_green[0]         ; clk_in     ; clk_in   ; None                       ; None                       ; 10.732 ns                ;
+; Not operational: Clock Skew > Data Delay ; time_move_cnt:u1|flag      ; led88:u3|col_red[2]           ; clk_in     ; clk_in   ; None                       ; None                       ; 5.981 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; time_move_cnt:u1|seg_data0[1] ; clk_in     ; clk_in   ; None                       ; None                       ; 3.968 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; time_move_cnt:u1|seg_data0[2] ; clk_in     ; clk_in   ; None                       ; None                       ; 3.971 ns                 ;
+; Not operational: Clock Skew > Data Delay ; time_move_cnt:u1|flag      ; led88:u3|col_red[1]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.296 ns                 ;
+; Not operational: Clock Skew > Data Delay ; led88:u3|cnt[0]            ; led88:u3|col_green[2]         ; clk_in     ; clk_in   ; None                       ; None                       ; 9.410 ns                 ;
+; Not operational: Clock Skew > Data Delay ; time_move_cnt:u1|flag      ; led88:u3|col_red[6]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.580 ns                 ;
+; Not operational: Clock Skew > Data Delay ; time_move_cnt:u1|flag      ; led88:u3|col_red[4]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.005 ns                 ;
+; Not operational: Clock Skew > Data Delay ; direction_judge:u2|pos[25] ; led88:u3|col_green[1]         ; clk_in     ; clk_in   ; None                       ; None                       ; 12.297 ns                ;
+; Not operational: Clock Skew > Data Delay ; time_move_cnt:u1|flag      ; led88:u3|col_red[0]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.279 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; time_move_cnt:u1|seg_data1[1] ; clk_in     ; clk_in   ; None                       ; None                       ; 4.783 ns                 ;
+; Not operational: Clock Skew > Data Delay ; win_judge                  ; time_move_cnt:u1|seg_data1[0] ; clk_in     ; clk_in   ; None                       ; None                       ; 4.788 ns                 ;
+; Not operational: Clock Skew > Data Delay ; time_move_cnt:u1|flag      ; led88:u3|col_red[7]           ; clk_in     ; clk_in   ; None                       ; None                       ; 6.427 ns                 ;
+; Not operational: Clock Skew > Data Delay ; time_move_cnt:u1|flag      ; led88:u3|col_red[5]           ; clk_in     ; clk_in   ; None                       ; None                       ; 7.080 ns                 ;
++------------------------------------------+----------------------------+-------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; tsu                                                                                               ;
++-------+--------------+------------+--------+-------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                                        ; To Clock ;
++-------+--------------+------------+--------+-------------------------------------------+----------+
+; N/A   ; None         ; 3.133 ns   ; rst    ; direction_judge:u2|goru[3]                ; clk_in   ;
+; N/A   ; None         ; 2.772 ns   ; rst    ; direction_judge:u2|gold[0]                ; clk_in   ;
+; N/A   ; None         ; 2.772 ns   ; rst    ; direction_judge:u2|goru[0]                ; clk_in   ;
+; N/A   ; None         ; 2.772 ns   ; rst    ; direction_judge:u2|gold[3]                ; clk_in   ;
+; N/A   ; None         ; 2.653 ns   ; map    ; led88:u3|col_red[6]                       ; clk_in   ;
+; N/A   ; None         ; 2.617 ns   ; key[1] ; direction_judge:u2|debounce:uu|key_sec[0] ; clk_in   ;
+; N/A   ; None         ; 2.612 ns   ; key[1] ; direction_judge:u2|debounce:uu|key_rst[0] ; clk_in   ;
+; N/A   ; None         ; 2.318 ns   ; map    ; direction_judge:u2|brick[8]               ; clk_in   ;
+; N/A   ; None         ; 2.101 ns   ; key[2] ; direction_judge:u2|debounce:ur|key_sec[0] ; clk_in   ;
+; N/A   ; None         ; 2.081 ns   ; key[2] ; direction_judge:u2|debounce:ur|key_rst[0] ; clk_in   ;
+; N/A   ; None         ; 2.020 ns   ; key[0] ; direction_judge:u2|debounce:ud|key_sec[0] ; clk_in   ;
+; N/A   ; None         ; 2.014 ns   ; key[3] ; direction_judge:u2|debounce:ul|key_rst[0] ; clk_in   ;
+; N/A   ; None         ; 1.897 ns   ; key[0] ; direction_judge:u2|debounce:ud|key_rst[0] ; clk_in   ;
+; N/A   ; None         ; 1.801 ns   ; key[3] ; direction_judge:u2|debounce:ul|key_sec[0] ; clk_in   ;
+; N/A   ; None         ; 1.792 ns   ; map    ; win_judge                                 ; clk_in   ;
+; N/A   ; None         ; 0.811 ns   ; map    ; led88:u3|col_red[2]                       ; clk_in   ;
+; N/A   ; None         ; 0.359 ns   ; map    ; led88:u3|col_red[4]                       ; clk_in   ;
+; N/A   ; None         ; 0.207 ns   ; map    ; led88:u3|col_red[0]                       ; clk_in   ;
+; N/A   ; None         ; 0.124 ns   ; map    ; led88:u3|col_red[3]                       ; clk_in   ;
+; N/A   ; None         ; -0.294 ns  ; map    ; led88:u3|col_red[7]                       ; clk_in   ;
+; N/A   ; None         ; -0.770 ns  ; map    ; led88:u3|col_red[5]                       ; clk_in   ;
+; N/A   ; None         ; -1.884 ns  ; map    ; led88:u3|col_red[1]                       ; clk_in   ;
++-------+--------------+------------+--------+-------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------+
+; tco                                                                                                ;
++-------+--------------+------------+------------------------------------+--------------+------------+
+; Slack ; Required tco ; Actual tco ; From                               ; To           ; From Clock ;
++-------+--------------+------------+------------------------------------+--------------+------------+
+; N/A   ; None         ; 22.441 ns  ; led88:u3|col_red[1]                ; col_red[1]   ; clk_in     ;
+; N/A   ; None         ; 22.429 ns  ; led88:u3|col_red[6]                ; col_red[6]   ; clk_in     ;
+; N/A   ; None         ; 22.306 ns  ; led88:u3|col_red[2]                ; col_red[2]   ; clk_in     ;
+; N/A   ; None         ; 22.220 ns  ; led88:u3|col_green[1]              ; col_green[1] ; clk_in     ;
+; N/A   ; None         ; 22.000 ns  ; led88:u3|row[2]                    ; row[2]       ; clk_in     ;
+; N/A   ; None         ; 21.825 ns  ; led88:u3|col_red[5]                ; col_red[5]   ; clk_in     ;
+; N/A   ; None         ; 21.762 ns  ; led88:u3|col_green[4]              ; col_green[4] ; clk_in     ;
+; N/A   ; None         ; 21.709 ns  ; led88:u3|row[7]                    ; row[7]       ; clk_in     ;
+; N/A   ; None         ; 21.642 ns  ; led88:u3|col_green[6]              ; col_green[6] ; clk_in     ;
+; N/A   ; None         ; 21.576 ns  ; led88:u3|col_green[5]              ; col_green[5] ; clk_in     ;
+; N/A   ; None         ; 21.500 ns  ; led88:u3|row[1]                    ; row[1]       ; clk_in     ;
+; N/A   ; None         ; 21.450 ns  ; led88:u3|row[4]                    ; row[4]       ; clk_in     ;
+; N/A   ; None         ; 21.372 ns  ; led88:u3|col_red[0]                ; col_red[0]   ; clk_in     ;
+; N/A   ; None         ; 21.275 ns  ; led88:u3|row[3]                    ; row[3]       ; clk_in     ;
+; N/A   ; None         ; 21.093 ns  ; led88:u3|row[0]                    ; row[0]       ; clk_in     ;
+; N/A   ; None         ; 21.088 ns  ; led88:u3|col_green[2]              ; col_green[2] ; clk_in     ;
+; N/A   ; None         ; 21.032 ns  ; led88:u3|col_green[7]              ; col_green[7] ; clk_in     ;
+; N/A   ; None         ; 20.486 ns  ; led88:u3|col_red[3]                ; col_red[3]   ; clk_in     ;
+; N/A   ; None         ; 20.143 ns  ; led88:u3|row[5]                    ; row[5]       ; clk_in     ;
+; N/A   ; None         ; 20.135 ns  ; led88:u3|row[6]                    ; row[6]       ; clk_in     ;
+; N/A   ; None         ; 20.025 ns  ; led88:u3|col_red[7]                ; col_red[7]   ; clk_in     ;
+; N/A   ; None         ; 19.943 ns  ; led88:u3|col_red[4]                ; col_red[4]   ; clk_in     ;
+; N/A   ; None         ; 19.904 ns  ; led88:u3|col_green[0]              ; col_green[0] ; clk_in     ;
+; N/A   ; None         ; 19.868 ns  ; led88:u3|col_green[3]              ; col_green[3] ; clk_in     ;
+; N/A   ; None         ; 19.642 ns  ; time_move_cnt:u1|seg_data0[0]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 19.553 ns  ; time_move_cnt:u1|seg_data0[0]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 19.544 ns  ; time_move_cnt:u1|seg_data0[0]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 19.498 ns  ; time_move_cnt:u1|seg_data1[0]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 19.416 ns  ; time_move_cnt:u1|seg_data0[0]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 19.409 ns  ; time_move_cnt:u1|seg_data0[0]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 19.409 ns  ; time_move_cnt:u1|seg_data1[0]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 19.400 ns  ; time_move_cnt:u1|seg_data1[0]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 19.399 ns  ; time_move_cnt:u1|seg_data0[0]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 19.390 ns  ; time_move_cnt:u1|seg_data0[0]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 19.332 ns  ; time_move_cnt:u1|seg_data0[1]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 19.272 ns  ; time_move_cnt:u1|seg_data1[0]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 19.265 ns  ; time_move_cnt:u1|seg_data1[0]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 19.255 ns  ; time_move_cnt:u1|seg_data1[0]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 19.246 ns  ; time_move_cnt:u1|seg_data1[0]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 19.084 ns  ; time_move_cnt:u1|seg_data0[2]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 18.989 ns  ; time_move_cnt:u1|seg_data1[1]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 18.951 ns  ; time_move_cnt:u1|seg_data0[2]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 18.936 ns  ; time_move_cnt:u1|seg_data0[2]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 18.917 ns  ; time_move_cnt:u1|seg_data0[1]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 18.916 ns  ; time_move_cnt:u1|seg_data0[1]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 18.789 ns  ; time_move_cnt:u1|seg_data0[2]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 18.787 ns  ; time_move_cnt:u1|seg_data0[2]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 18.786 ns  ; time_move_cnt:u1|seg_data0[2]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 18.780 ns  ; time_move_cnt:u1|seg_data0[1]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 18.773 ns  ; time_move_cnt:u1|seg_data0[1]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 18.763 ns  ; time_move_cnt:u1|seg_data0[1]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 18.757 ns  ; time_move_cnt:u1|seg_data0[2]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 18.754 ns  ; time_move_cnt:u1|seg_data0[1]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 18.574 ns  ; time_move_cnt:u1|seg_data1[1]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 18.573 ns  ; time_move_cnt:u1|seg_data1[1]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 18.437 ns  ; time_move_cnt:u1|seg_data1[1]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 18.430 ns  ; time_move_cnt:u1|seg_data1[1]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 18.420 ns  ; time_move_cnt:u1|seg_data1[1]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 18.411 ns  ; time_move_cnt:u1|seg_data1[1]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 18.217 ns  ; time_move_cnt:u1|seg_data0[3]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 18.203 ns  ; time_move_cnt:u1|seg_data0[3]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 18.199 ns  ; time_move_cnt:u1|seg_data1[3]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 18.185 ns  ; time_move_cnt:u1|seg_data1[3]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 18.159 ns  ; time_move_cnt:u1|seg_data0[3]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 18.141 ns  ; time_move_cnt:u1|seg_data1[3]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 18.103 ns  ; time_move_cnt:u1|seg_data1[2]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 18.066 ns  ; time_move_cnt:u1|seg_data0[3]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 18.059 ns  ; time_move_cnt:u1|seg_data0[3]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 18.053 ns  ; time_move_cnt:u1|seg_data0[3]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 18.048 ns  ; time_move_cnt:u1|seg_data1[3]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 18.041 ns  ; time_move_cnt:u1|seg_data1[3]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 18.040 ns  ; time_move_cnt:u1|seg_data0[3]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 18.035 ns  ; time_move_cnt:u1|seg_data1[3]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 18.022 ns  ; time_move_cnt:u1|seg_data1[3]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 17.970 ns  ; time_move_cnt:u1|seg_data1[2]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 17.955 ns  ; time_move_cnt:u1|seg_data1[2]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 17.808 ns  ; time_move_cnt:u1|seg_data1[2]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 17.806 ns  ; time_move_cnt:u1|seg_data1[2]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 17.805 ns  ; time_move_cnt:u1|seg_data1[2]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 17.776 ns  ; time_move_cnt:u1|seg_data1[2]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 17.403 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 17.314 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 17.305 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 17.177 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 17.177 ns  ; direction_judge:u2|movecnt[0]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 17.170 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 17.160 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 17.151 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 17.088 ns  ; direction_judge:u2|movecnt[0]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 17.079 ns  ; direction_judge:u2|movecnt[0]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 16.951 ns  ; direction_judge:u2|movecnt[0]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 16.944 ns  ; direction_judge:u2|movecnt[0]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 16.934 ns  ; direction_judge:u2|movecnt[0]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 16.925 ns  ; direction_judge:u2|movecnt[0]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 16.894 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; cat[6]       ; clk_in     ;
+; N/A   ; None         ; 16.729 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; cat[6]       ; clk_in     ;
+; N/A   ; None         ; 16.634 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 16.545 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 16.536 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 16.504 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; cat[7]       ; clk_in     ;
+; N/A   ; None         ; 16.408 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 16.401 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 16.391 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 16.382 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 16.339 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; cat[7]       ; clk_in     ;
+; N/A   ; None         ; 16.287 ns  ; direction_judge:u2|movecnt[1]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 15.872 ns  ; direction_judge:u2|movecnt[1]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 15.871 ns  ; direction_judge:u2|movecnt[1]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 15.735 ns  ; direction_judge:u2|movecnt[1]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 15.728 ns  ; direction_judge:u2|movecnt[1]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 15.718 ns  ; direction_judge:u2|movecnt[1]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 15.709 ns  ; direction_judge:u2|movecnt[1]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 15.687 ns  ; direction_judge:u2|movecnt[4]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 15.598 ns  ; direction_judge:u2|movecnt[4]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 15.593 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; cat[0]       ; clk_in     ;
+; N/A   ; None         ; 15.589 ns  ; direction_judge:u2|movecnt[4]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 15.539 ns  ; direction_judge:u2|movecnt[6]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 15.461 ns  ; direction_judge:u2|movecnt[4]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 15.454 ns  ; direction_judge:u2|movecnt[4]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 15.444 ns  ; direction_judge:u2|movecnt[4]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 15.438 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; cat[0]       ; clk_in     ;
+; N/A   ; None         ; 15.435 ns  ; direction_judge:u2|movecnt[4]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 15.406 ns  ; direction_judge:u2|movecnt[6]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 15.391 ns  ; direction_judge:u2|movecnt[6]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 15.343 ns  ; direction_judge:u2|movecnt[2]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 15.244 ns  ; direction_judge:u2|movecnt[6]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 15.242 ns  ; direction_judge:u2|movecnt[6]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 15.241 ns  ; direction_judge:u2|movecnt[6]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 15.212 ns  ; direction_judge:u2|movecnt[6]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 15.210 ns  ; direction_judge:u2|movecnt[2]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 15.195 ns  ; direction_judge:u2|movecnt[2]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 15.048 ns  ; direction_judge:u2|movecnt[2]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 15.046 ns  ; direction_judge:u2|movecnt[2]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 15.045 ns  ; direction_judge:u2|movecnt[2]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 15.016 ns  ; direction_judge:u2|movecnt[2]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 14.689 ns  ; direction_judge:u2|movecnt[7]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 14.675 ns  ; direction_judge:u2|movecnt[7]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 14.631 ns  ; direction_judge:u2|movecnt[7]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 14.538 ns  ; direction_judge:u2|movecnt[7]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 14.531 ns  ; direction_judge:u2|movecnt[7]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 14.525 ns  ; direction_judge:u2|movecnt[7]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 14.512 ns  ; direction_judge:u2|movecnt[7]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 14.489 ns  ; time_move_cnt:u1|segment:s1|cnt[1] ; cat[1]       ; clk_in     ;
+; N/A   ; None         ; 14.334 ns  ; time_move_cnt:u1|segment:s1|cnt[0] ; cat[1]       ; clk_in     ;
+; N/A   ; None         ; 14.329 ns  ; direction_judge:u2|movecnt[3]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 14.328 ns  ; direction_judge:u2|movecnt[5]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 14.315 ns  ; direction_judge:u2|movecnt[3]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 14.271 ns  ; direction_judge:u2|movecnt[3]      ; seg_led[0]   ; clk_in     ;
+; N/A   ; None         ; 14.178 ns  ; direction_judge:u2|movecnt[3]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 14.171 ns  ; direction_judge:u2|movecnt[3]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 14.165 ns  ; direction_judge:u2|movecnt[3]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 14.152 ns  ; direction_judge:u2|movecnt[3]      ; seg_led[5]   ; clk_in     ;
+; N/A   ; None         ; 13.913 ns  ; direction_judge:u2|movecnt[5]      ; seg_led[2]   ; clk_in     ;
+; N/A   ; None         ; 13.912 ns  ; direction_judge:u2|movecnt[5]      ; seg_led[1]   ; clk_in     ;
+; N/A   ; None         ; 13.776 ns  ; direction_judge:u2|movecnt[5]      ; seg_led[3]   ; clk_in     ;
+; N/A   ; None         ; 13.769 ns  ; direction_judge:u2|movecnt[5]      ; seg_led[6]   ; clk_in     ;
+; N/A   ; None         ; 13.759 ns  ; direction_judge:u2|movecnt[5]      ; seg_led[4]   ; clk_in     ;
+; N/A   ; None         ; 13.750 ns  ; direction_judge:u2|movecnt[5]      ; seg_led[5]   ; clk_in     ;
++-------+--------------+------------+------------------------------------+--------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; th                                                                                                      ;
++---------------+-------------+-----------+--------+-------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                                        ; To Clock ;
++---------------+-------------+-----------+--------+-------------------------------------------+----------+
+; N/A           ; None        ; 10.223 ns ; map    ; led88:u3|col_red[1]                       ; clk_in   ;
+; N/A           ; None        ; 8.730 ns  ; map    ; led88:u3|col_red[5]                       ; clk_in   ;
+; N/A           ; None        ; 8.595 ns  ; map    ; led88:u3|col_red[3]                       ; clk_in   ;
+; N/A           ; None        ; 8.091 ns  ; map    ; led88:u3|col_red[7]                       ; clk_in   ;
+; N/A           ; None        ; 7.772 ns  ; map    ; led88:u3|col_red[0]                       ; clk_in   ;
+; N/A           ; None        ; 7.758 ns  ; map    ; led88:u3|col_red[4]                       ; clk_in   ;
+; N/A           ; None        ; 7.508 ns  ; map    ; led88:u3|col_red[2]                       ; clk_in   ;
+; N/A           ; None        ; 6.818 ns  ; map    ; led88:u3|col_red[6]                       ; clk_in   ;
+; N/A           ; None        ; -1.238 ns ; map    ; win_judge                                 ; clk_in   ;
+; N/A           ; None        ; -1.247 ns ; key[3] ; direction_judge:u2|debounce:ul|key_sec[0] ; clk_in   ;
+; N/A           ; None        ; -1.343 ns ; key[0] ; direction_judge:u2|debounce:ud|key_rst[0] ; clk_in   ;
+; N/A           ; None        ; -1.460 ns ; key[3] ; direction_judge:u2|debounce:ul|key_rst[0] ; clk_in   ;
+; N/A           ; None        ; -1.466 ns ; key[0] ; direction_judge:u2|debounce:ud|key_sec[0] ; clk_in   ;
+; N/A           ; None        ; -1.527 ns ; key[2] ; direction_judge:u2|debounce:ur|key_rst[0] ; clk_in   ;
+; N/A           ; None        ; -1.547 ns ; key[2] ; direction_judge:u2|debounce:ur|key_sec[0] ; clk_in   ;
+; N/A           ; None        ; -1.764 ns ; map    ; direction_judge:u2|brick[8]               ; clk_in   ;
+; N/A           ; None        ; -2.058 ns ; key[1] ; direction_judge:u2|debounce:uu|key_rst[0] ; clk_in   ;
+; N/A           ; None        ; -2.063 ns ; key[1] ; direction_judge:u2|debounce:uu|key_sec[0] ; clk_in   ;
+; N/A           ; None        ; -2.218 ns ; rst    ; direction_judge:u2|gold[0]                ; clk_in   ;
+; N/A           ; None        ; -2.218 ns ; rst    ; direction_judge:u2|goru[0]                ; clk_in   ;
+; N/A           ; None        ; -2.218 ns ; rst    ; direction_judge:u2|gold[3]                ; clk_in   ;
+; N/A           ; None        ; -2.579 ns ; rst    ; direction_judge:u2|goru[3]                ; clk_in   ;
++---------------+-------------+-----------+--------+-------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Sat Dec 22 16:41:40 2018
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off easy_maze -c easy_maze
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "led88:u3|row[0]" is a latch
+    Warning: Node "led88:u3|row[1]" is a latch
+    Warning: Node "led88:u3|row[2]" is a latch
+    Warning: Node "led88:u3|row[3]" is a latch
+    Warning: Node "led88:u3|row[4]" is a latch
+    Warning: Node "led88:u3|row[5]" is a latch
+    Warning: Node "led88:u3|row[6]" is a latch
+    Warning: Node "led88:u3|row[7]" is a latch
+    Warning: Node "led88:u3|col_red[0]" is a latch
+    Warning: Node "led88:u3|col_red[1]" is a latch
+    Warning: Node "led88:u3|col_red[2]" is a latch
+    Warning: Node "led88:u3|col_red[3]" is a latch
+    Warning: Node "led88:u3|col_red[4]" is a latch
+    Warning: Node "led88:u3|col_red[5]" is a latch
+    Warning: Node "led88:u3|col_red[6]" is a latch
+    Warning: Node "led88:u3|col_red[7]" is a latch
+    Warning: Node "led88:u3|col_green[0]" is a latch
+    Warning: Node "led88:u3|col_green[1]" is a latch
+    Warning: Node "led88:u3|col_green[2]" is a latch
+    Warning: Node "led88:u3|col_green[3]" is a latch
+    Warning: Node "led88:u3|col_green[4]" is a latch
+    Warning: Node "led88:u3|col_green[5]" is a latch
+    Warning: Node "led88:u3|col_green[6]" is a latch
+    Warning: Node "led88:u3|col_green[7]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk_in" is an undefined clock
+Warning: Found 7 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "led88:u3|always1~0" as buffer
+    Info: Detected gated clock "led88:u3|row[7]~0" as buffer
+    Info: Detected ripple clock "led88:u3|divd_frequency:divd_1k|clk_out" as buffer
+    Info: Detected ripple clock "win_judge" as buffer
+    Info: Detected ripple clock "time_move_cnt:u1|divd_frequency:divd_1|clk_out" as buffer
+    Info: Detected ripple clock "time_move_cnt:u1|flag" as buffer
+    Info: Detected ripple clock "time_move_cnt:u1|segment:s1|divd_frequency:divd_1k|clk_out" as buffer
+Info: Clock "clk_in" has Internal fmax of 38.45 MHz between source register "direction_judge:u2|debounce:uu|key_sec[0]" and destination register "direction_judge:u2|pos[37]" (period= 26.011 ns)
+    Info: + Longest register to register delay is 25.302 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X15_Y8_N3; Fanout = 3; REG Node = 'direction_judge:u2|debounce:uu|key_sec[0]'
+        Info: 2: + IC(0.947 ns) + CELL(0.200 ns) = 1.147 ns; Loc. = LC_X15_Y8_N6; Fanout = 4; COMB Node = 'direction_judge:u2|debounce:uu|key_pulse[0]'
+        Info: 3: + IC(2.623 ns) + CELL(0.511 ns) = 4.281 ns; Loc. = LC_X8_Y8_N7; Fanout = 7; COMB Node = 'direction_judge:u2|Mux3~0'
+        Info: 4: + IC(0.752 ns) + CELL(0.740 ns) = 5.773 ns; Loc. = LC_X8_Y8_N2; Fanout = 93; COMB Node = 'direction_judge:u2|Mux3~1'
+        Info: 5: + IC(1.198 ns) + CELL(0.740 ns) = 7.711 ns; Loc. = LC_X9_Y8_N0; Fanout = 11; COMB Node = 'direction_judge:u2|ShiftLeft0~26'
+        Info: 6: + IC(3.197 ns) + CELL(0.200 ns) = 11.108 ns; Loc. = LC_X4_Y9_N9; Fanout = 1; COMB Node = 'direction_judge:u2|ShiftLeft0~82'
+        Info: 7: + IC(3.154 ns) + CELL(0.511 ns) = 14.773 ns; Loc. = LC_X8_Y4_N2; Fanout = 2; COMB Node = 'direction_judge:u2|ShiftLeft0~84'
+        Info: 8: + IC(0.720 ns) + CELL(0.200 ns) = 15.693 ns; Loc. = LC_X8_Y4_N0; Fanout = 1; COMB Node = 'direction_judge:u2|WideOr2~6'
+        Info: 9: + IC(0.717 ns) + CELL(0.740 ns) = 17.150 ns; Loc. = LC_X8_Y4_N1; Fanout = 1; COMB Node = 'direction_judge:u2|WideOr2~7'
+        Info: 10: + IC(1.883 ns) + CELL(0.914 ns) = 19.947 ns; Loc. = LC_X7_Y8_N3; Fanout = 2; COMB Node = 'direction_judge:u2|movecnt[0]~6'
+        Info: 11: + IC(0.734 ns) + CELL(0.200 ns) = 20.881 ns; Loc. = LC_X7_Y8_N5; Fanout = 60; COMB Node = 'direction_judge:u2|movecnt[0]~7'
+        Info: 12: + IC(3.178 ns) + CELL(1.243 ns) = 25.302 ns; Loc. = LC_X2_Y7_N5; Fanout = 3; REG Node = 'direction_judge:u2|pos[37]'
+        Info: Total cell delay = 6.199 ns ( 24.50 % )
+        Info: Total interconnect delay = 19.103 ns ( 75.50 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk_in" to destination register is 3.819 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 212; CLK Node = 'clk_in'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X2_Y7_N5; Fanout = 3; REG Node = 'direction_judge:u2|pos[37]'
+            Info: Total cell delay = 2.081 ns ( 54.49 % )
+            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+        Info: - Longest clock path from clock "clk_in" to source register is 3.819 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 212; CLK Node = 'clk_in'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X15_Y8_N3; Fanout = 3; REG Node = 'direction_judge:u2|debounce:uu|key_sec[0]'
+            Info: Total cell delay = 2.081 ns ( 54.49 % )
+            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Warning: Circuit may not operate. Detected 147 non-operational path(s) clocked by clock "clk_in" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "direction_judge:u2|pos[41]" and destination pin or register "led88:u3|col_green[1]" for clock "clk_in" (Hold time is 9.144 ns)
+    Info: + Largest clock skew is 13.666 ns
+        Info: + Longest clock path from clock "clk_in" to destination register is 17.485 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 212; CLK Node = 'clk_in'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y5_N7; Fanout = 10; REG Node = 'time_move_cnt:u1|divd_frequency:divd_1|clk_out'
+            Info: 3: + IC(4.474 ns) + CELL(1.294 ns) = 9.963 ns; Loc. = LC_X10_Y4_N2; Fanout = 17; REG Node = 'time_move_cnt:u1|flag'
+            Info: 4: + IC(0.934 ns) + CELL(0.740 ns) = 11.637 ns; Loc. = LC_X10_Y4_N9; Fanout = 15; COMB Node = 'led88:u3|always1~0'
+            Info: 5: + IC(5.108 ns) + CELL(0.740 ns) = 17.485 ns; Loc. = LC_X5_Y8_N5; Fanout = 1; REG Node = 'led88:u3|col_green[1]'
+            Info: Total cell delay = 5.231 ns ( 29.92 % )
+            Info: Total interconnect delay = 12.254 ns ( 70.08 % )
+        Info: - Shortest clock path from clock "clk_in" to source register is 3.819 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 212; CLK Node = 'clk_in'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X5_Y8_N6; Fanout = 3; REG Node = 'direction_judge:u2|pos[41]'
+            Info: Total cell delay = 2.081 ns ( 54.49 % )
+            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+    Info: - Micro clock to output delay of source is 0.376 ns
+    Info: - Shortest register to register delay is 4.146 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y8_N6; Fanout = 3; REG Node = 'direction_judge:u2|pos[41]'
+        Info: 2: + IC(1.409 ns) + CELL(0.200 ns) = 1.609 ns; Loc. = LC_X5_Y8_N2; Fanout = 1; COMB Node = 'led88:u3|Mux6~3'
+        Info: 3: + IC(0.723 ns) + CELL(0.200 ns) = 2.532 ns; Loc. = LC_X5_Y8_N8; Fanout = 1; COMB Node = 'led88:u3|Mux6~4'
+        Info: 4: + IC(0.700 ns) + CELL(0.914 ns) = 4.146 ns; Loc. = LC_X5_Y8_N5; Fanout = 1; REG Node = 'led88:u3|col_green[1]'
+        Info: Total cell delay = 1.314 ns ( 31.69 % )
+        Info: Total interconnect delay = 2.832 ns ( 68.31 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+Info: tsu for register "direction_judge:u2|goru[3]" (data pin = "rst", clock pin = "clk_in") is 3.133 ns
+    Info: + Longest pin to register delay is 6.619 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_124; Fanout = 222; PIN Node = 'rst'
+        Info: 2: + IC(2.247 ns) + CELL(0.914 ns) = 4.293 ns; Loc. = LC_X8_Y8_N5; Fanout = 4; COMB Node = 'direction_judge:u2|gold[0]~2'
+        Info: 3: + IC(1.083 ns) + CELL(1.243 ns) = 6.619 ns; Loc. = LC_X9_Y8_N3; Fanout = 1; REG Node = 'direction_judge:u2|goru[3]'
+        Info: Total cell delay = 3.289 ns ( 49.69 % )
+        Info: Total interconnect delay = 3.330 ns ( 50.31 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk_in" to destination register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 212; CLK Node = 'clk_in'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X9_Y8_N3; Fanout = 1; REG Node = 'direction_judge:u2|goru[3]'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+Info: tco from clock "clk_in" to destination pin "col_red[1]" through register "led88:u3|col_red[1]" is 22.441 ns
+    Info: + Longest clock path from clock "clk_in" to source register is 17.592 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 212; CLK Node = 'clk_in'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y5_N7; Fanout = 10; REG Node = 'time_move_cnt:u1|divd_frequency:divd_1|clk_out'
+        Info: 3: + IC(4.474 ns) + CELL(1.294 ns) = 9.963 ns; Loc. = LC_X10_Y4_N2; Fanout = 17; REG Node = 'time_move_cnt:u1|flag'
+        Info: 4: + IC(0.931 ns) + CELL(0.740 ns) = 11.634 ns; Loc. = LC_X10_Y4_N4; Fanout = 16; COMB Node = 'led88:u3|row[7]~0'
+        Info: 5: + IC(5.218 ns) + CELL(0.740 ns) = 17.592 ns; Loc. = LC_X3_Y9_N4; Fanout = 1; REG Node = 'led88:u3|col_red[1]'
+        Info: Total cell delay = 5.231 ns ( 29.74 % )
+        Info: Total interconnect delay = 12.361 ns ( 70.26 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 4.849 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X3_Y9_N4; Fanout = 1; REG Node = 'led88:u3|col_red[1]'
+        Info: 2: + IC(2.527 ns) + CELL(2.322 ns) = 4.849 ns; Loc. = PIN_21; Fanout = 0; PIN Node = 'col_red[1]'
+        Info: Total cell delay = 2.322 ns ( 47.89 % )
+        Info: Total interconnect delay = 2.527 ns ( 52.11 % )
+Info: th for register "led88:u3|col_red[1]" (data pin = "map", clock pin = "clk_in") is 10.223 ns
+    Info: + Longest clock path from clock "clk_in" to destination register is 17.592 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 212; CLK Node = 'clk_in'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y5_N7; Fanout = 10; REG Node = 'time_move_cnt:u1|divd_frequency:divd_1|clk_out'
+        Info: 3: + IC(4.474 ns) + CELL(1.294 ns) = 9.963 ns; Loc. = LC_X10_Y4_N2; Fanout = 17; REG Node = 'time_move_cnt:u1|flag'
+        Info: 4: + IC(0.931 ns) + CELL(0.740 ns) = 11.634 ns; Loc. = LC_X10_Y4_N4; Fanout = 16; COMB Node = 'led88:u3|row[7]~0'
+        Info: 5: + IC(5.218 ns) + CELL(0.740 ns) = 17.592 ns; Loc. = LC_X3_Y9_N4; Fanout = 1; REG Node = 'led88:u3|col_red[1]'
+        Info: Total cell delay = 5.231 ns ( 29.74 % )
+        Info: Total interconnect delay = 12.361 ns ( 70.26 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 7.369 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_125; Fanout = 9; PIN Node = 'map'
+        Info: 2: + IC(4.061 ns) + CELL(0.200 ns) = 5.393 ns; Loc. = LC_X3_Y9_N7; Fanout = 1; COMB Node = 'led88:u3|col_red[1]~3'
+        Info: 3: + IC(0.731 ns) + CELL(0.740 ns) = 6.864 ns; Loc. = LC_X3_Y9_N3; Fanout = 1; COMB Node = 'led88:u3|col_red[1]~5'
+        Info: 4: + IC(0.305 ns) + CELL(0.200 ns) = 7.369 ns; Loc. = LC_X3_Y9_N4; Fanout = 1; REG Node = 'led88:u3|col_red[1]'
+        Info: Total cell delay = 2.272 ns ( 30.83 % )
+        Info: Total interconnect delay = 5.097 ns ( 69.17 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 152 megabytes
+    Info: Processing ended: Sat Dec 22 16:41:41 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
