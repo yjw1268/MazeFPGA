@@ -1,6 +1,6 @@
-# MazeFPGA
-V1.2,fundamental request+maps+start UI  
+# MazeFPGA  
 BUPT DSP Experient  
+V1.2,fundamental request+maps+start UI  
 ## 简易迷宫游戏  
 设计并实现一个简易迷宫游戏机。  
 ### 1.	基本要求
